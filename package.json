@@ -1,0 +1,91 @@
+{
+  "name": "capstone_react_sb",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "craco start",
+    "build": "craco build",
+    "test": "craco test",
+    "eject": "react-scripts eject",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook",
+    "watch:tailwind": "npx tailwindcss -i ./src/styles/index.css -o ./app/styles/index.css --watch",
+    "type:check": "tsc",
+    "lint": "eslint --ext .ts,.tsx --ignore-path .gitignore src",
+    "lintfix": "eslint --ext .ts,.tsx --ignore-path .gitignore --fix src",
+    "build:tailwind": "postcss src/styles/index.css -o app/styles/index.css --env production",
+    "preview:tailwind": "postcss src/styles/index.css -o app/assets/index.css",
+    "build:run": "yarn build:tailwind && yarn build",
+    "pwa:test": "serve -s dist -l 60562",
+    "data-server": "json-server --watch app/db.json --port 3004"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.10.4",
+    "@emotion/styled": "^11.10.4",
+    "@mui/icons-material": "^5.10.9",
+    "@mui/material": "^5.10.11",
+    "@reduxjs/toolkit": "^1.8.6",
+    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/react": "^13.4.0",
+    "@testing-library/user-event": "^14.4.3",
+    "axios": "^1.1.3",
+    "clsx": "^1.2.1",
+    "date-fns": "^2.29.3",
+    "highcharts": "^10.2.1",
+    "highcharts-react-official": "^3.1.0",
+    "react": "~18.2.0",
+    "react-dom": "~18.2.0",
+    "react-redux": "^8.0.4",
+    "react-router": "^6.4.2",
+    "react-router-dom": "^6.4.2",
+    "react-scripts": "^5.0.1"
+  },
+  "devDependencies": {
+    "@craco/craco": "^6.4.5",
+    "@storybook/addon-a11y": "^6.5.13",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/node-logger": "^6.5.13",
+    "@storybook/preset-create-react-app": "^4.1.2",
+    "@storybook/react": "^6.5.13",
+    "autoprefixer": "^10.4.12",
+    "craco-alias": "^3.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard": "^17.0.0",
+    "eslint-plugin-import": "^2.26.0",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-n": "^15.3.0",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-promise": "6.1.1",
+    "eslint-plugin-react": "^7.31.10",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "postcss": "^8.4.18",
+    "postcss-cli": "^10.0.0",
+    "postcss-import": "^15.0.0",
+    "postcss-nested": "^6.0.0",
+    "postcss-nested-ancestors": "^3.0.0",
+    "prettier": "^2.7.1",
+    "prop-types": "^15.8.1",
+    "tailwindcss": "^3.2.1",
+    "webpack": "^5.74.0"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "engines": {
+    "node": ">=16"
+  }
+}

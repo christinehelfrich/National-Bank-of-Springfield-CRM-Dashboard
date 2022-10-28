@@ -1,0 +1,1452 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "tl_first_name": "Ferdinand",
+      "tl_last_name": "Sifleet",
+      "first_name": "Bone",
+      "last_name": "Maides",
+      "email": "bmaides0@oracle.com",
+      "role": "Commercial RM V"
+    },
+    {
+      "id": 2,
+      "tl_first_name": "Lorilee",
+      "tl_last_name": "Ricciardello",
+      "first_name": "Freeland",
+      "last_name": "Kerss",
+      "email": "fkerss1@icio.us",
+      "role": "Commercial RM III"
+    },
+    {
+      "id": 3,
+      "tl_first_name": "Rowen",
+      "tl_last_name": "Stanhope",
+      "first_name": "Lilith",
+      "last_name": "Phlippsen",
+      "email": "lphlippsen2@prweb.com",
+      "role": "Commercial RM II"
+    },
+    {
+      "id": 4,
+      "tl_first_name": "Samuel",
+      "tl_last_name": "Brittles",
+      "first_name": "Ferrel",
+      "last_name": "Flecknell",
+      "email": "fflecknell3@elegantthemes.com",
+      "role": "Commercial RM II"
+    },
+    {
+      "id": 5,
+      "tl_first_name": "Jocko",
+      "tl_last_name": "Tschersich",
+      "first_name": "Anabelle",
+      "last_name": "Woodthorpe",
+      "email": "awoodthorpe4@aol.com",
+      "role": "Commercial RM IV"
+    },
+    {
+      "id": 6,
+      "tl_first_name": "Billie",
+      "tl_last_name": "Crosston",
+      "first_name": "Raine",
+      "last_name": "Rouff",
+      "email": "rrouff5@lulu.com",
+      "role": "Commercial RM V"
+    },
+    {
+      "id": 7,
+      "tl_first_name": "Gleda",
+      "tl_last_name": "Foxley",
+      "first_name": "Nichol",
+      "last_name": "Forsdicke",
+      "email": "nforsdicke6@prnewswire.com",
+      "role": "Commercial RM IV"
+    },
+    {
+      "id": 8,
+      "tl_first_name": "Mireille",
+      "tl_last_name": "Inett",
+      "first_name": "Reilly",
+      "last_name": "Walczak",
+      "email": "rwalczak7@mail.ru",
+      "role": "Commercial RM III"
+    },
+    {
+      "id": 9,
+      "tl_first_name": "Susy",
+      "tl_last_name": "Meron",
+      "first_name": "Arlie",
+      "last_name": "Tadgell",
+      "email": "atadgell8@imageshack.us",
+      "role": "Commercial RM IV"
+    },
+    {
+      "id": 10,
+      "tl_first_name": "Darby",
+      "tl_last_name": "Mccaull",
+      "first_name": "Laurette",
+      "last_name": "Linford",
+      "email": "llinford9@nationalgeographic.com",
+      "role": "Commercial RM I"
+    }
+  ],
+  "clients": [
+    {
+      "id": 1,
+      "relationships": 90,
+      "credit_only": 9,
+      "top_prospects": 11,
+      "high_relationships": 5,
+      "suspects": 8
+    },
+    {
+      "id": 2,
+      "relationships": 100,
+      "credit_only": 5,
+      "top_prospects": 12,
+      "high_relationships": 4,
+      "suspects": 0
+    },
+    {
+      "id": 3,
+      "relationships": 59,
+      "credit_only": 7,
+      "top_prospects": 10,
+      "high_relationships": 6,
+      "suspects": 7
+    },
+    {
+      "id": 4,
+      "relationships": 30,
+      "credit_only": 3,
+      "top_prospects": 12,
+      "high_relationships": 3,
+      "suspects": 4
+    },
+    {
+      "id": 5,
+      "relationships": 17,
+      "credit_only": 10,
+      "top_prospects": 16,
+      "high_relationships": 1,
+      "suspects": 8
+    },
+    {
+      "id": 6,
+      "relationships": 69,
+      "credit_only": 4,
+      "top_prospects": 12,
+      "high_relationships": 2,
+      "suspects": 4
+    },
+    {
+      "id": 7,
+      "relationships": 17,
+      "credit_only": 7,
+      "top_prospects": 19,
+      "high_relationships": 1,
+      "suspects": 8
+    },
+    {
+      "id": 8,
+      "relationships": 59,
+      "credit_only": 4,
+      "top_prospects": 20,
+      "high_relationships": 2,
+      "suspects": 2
+    },
+    {
+      "id": 9,
+      "relationships": 75,
+      "credit_only": 5,
+      "top_prospects": 17,
+      "high_relationships": 4,
+      "suspects": 9
+    },
+    {
+      "id": 10,
+      "relationships": 49,
+      "credit_only": 1,
+      "top_prospects": 19,
+      "high_relationships": 4,
+      "suspects": 1
+    }
+  ],
+  "summary1": [
+    {
+      "id": 1,
+      "ttm_avg_loan_bal": 212972.87,
+      "ttm_avg_credit_comm": 8914.95,
+      "ttm_dep_bal": 2180.44
+    },
+    {
+      "id": 2,
+      "ttm_avg_loan_bal": 486048.21,
+      "ttm_avg_credit_comm": 194759.23,
+      "ttm_dep_bal": 5603.26
+    },
+    {
+      "id": 3,
+      "ttm_avg_loan_bal": 530844.56,
+      "ttm_avg_credit_comm": 594014.14,
+      "ttm_dep_bal": 7182.79
+    },
+    {
+      "id": 4,
+      "ttm_avg_loan_bal": 311103.28,
+      "ttm_avg_credit_comm": 544324.97,
+      "ttm_dep_bal": 7498.51
+    },
+    {
+      "id": 5,
+      "ttm_avg_loan_bal": 63681.05,
+      "ttm_avg_credit_comm": 163626.31,
+      "ttm_dep_bal": 109.99
+    },
+    {
+      "id": 6,
+      "ttm_avg_loan_bal": 181122.04,
+      "ttm_avg_credit_comm": 554763.71,
+      "ttm_dep_bal": 4192.98
+    },
+    {
+      "id": 7,
+      "ttm_avg_loan_bal": 80884.17,
+      "ttm_avg_credit_comm": 518754.09,
+      "ttm_dep_bal": 7387.2
+    },
+    {
+      "id": 8,
+      "ttm_avg_loan_bal": 172949.07,
+      "ttm_avg_credit_comm": 130058.0,
+      "ttm_dep_bal": 2337.47
+    },
+    {
+      "id": 9,
+      "ttm_avg_loan_bal": 249579.57,
+      "ttm_avg_credit_comm": 254300.54,
+      "ttm_dep_bal": 1772.2
+    },
+    {
+      "id": 10,
+      "ttm_avg_loan_bal": 352984.84,
+      "ttm_avg_credit_comm": 454044.8,
+      "ttm_dep_bal": 216.37
+    }
+  ],
+  "summary2": [
+    {
+      "id": 1,
+      "ttm_rev": 4057811.0,
+      "ttm_avg_raroc": 0.29681854,
+      "fee_equiv_card_load_comm": 0.39817028
+    },
+    {
+      "id": 2,
+      "ttm_rev": 3945095.47,
+      "ttm_avg_raroc": 0.39765978,
+      "fee_equiv_card_load_comm": 0.76283909
+    },
+    {
+      "id": 3,
+      "ttm_rev": 3154449.0,
+      "ttm_avg_raroc": 0.03894419,
+      "fee_equiv_card_load_comm": 0.03140974
+    },
+    {
+      "id": 4,
+      "ttm_rev": 2174714.0,
+      "ttm_avg_raroc": 0.871796,
+      "fee_equiv_card_load_comm": 0.82353563
+    },
+    {
+      "id": 5,
+      "ttm_rev": 1779820.27,
+      "ttm_avg_raroc": 0.15501245,
+      "fee_equiv_card_load_comm": 0.60169046
+    },
+    {
+      "id": 6,
+      "ttm_rev": 5803026.57,
+      "ttm_avg_raroc": 0.31479802,
+      "fee_equiv_card_load_comm": 0.01058198
+    },
+    {
+      "id": 7,
+      "ttm_rev": 2115580.99,
+      "ttm_avg_raroc": 0.34711969,
+      "fee_equiv_card_load_comm": 0.40804178
+    },
+    {
+      "id": 8,
+      "ttm_rev": 2633485.19,
+      "ttm_avg_raroc": 0.20588298,
+      "fee_equiv_card_load_comm": 0.15171187
+    },
+    {
+      "id": 9,
+      "ttm_rev": 4955162.6,
+      "ttm_avg_raroc": 0.86032329,
+      "fee_equiv_card_load_comm": 0.15954538
+    },
+    {
+      "id": 10,
+      "ttm_rev": 1414729.0,
+      "ttm_avg_raroc": 0.90738984,
+      "fee_equiv_card_load_comm": 0.35831816
+    }
+  ],
+  "outcome_metrics": [
+    {
+      "id": 1,
+      "loan_prod_y1": 455167.57,
+      "loan_prod_y2": 579098.78,
+      "dep_growth_y1": 348379.44,
+      "dep_growth_y2": 382682.86,
+      "tm_growth_y1": 322704.73,
+      "tm_growth_y2": 400572.22,
+      "new_clients_y1": 3,
+      "new_clients_y2": 4
+    },
+    {
+      "id": 2,
+      "loan_prod_y1": 475147.38,
+      "loan_prod_y2": 474306.98,
+      "dep_growth_y1": 480639.73,
+      "dep_growth_y2": 458282.2,
+      "tm_growth_y1": 445555.26,
+      "tm_growth_y2": 599815.74,
+      "new_clients_y1": 5,
+      "new_clients_y2": 0
+    },
+    {
+      "id": 3,
+      "loan_prod_y1": 565113.68,
+      "loan_prod_y2": 550962.79,
+      "dep_growth_y1": 285602.03,
+      "dep_growth_y2": 454228.51,
+      "tm_growth_y1": 571156.48,
+      "tm_growth_y2": 332239.04,
+      "new_clients_y1": 5,
+      "new_clients_y2": 0
+    },
+    {
+      "id": 4,
+      "loan_prod_y1": 329370.12,
+      "loan_prod_y2": 330233.07,
+      "dep_growth_y1": 533706.44,
+      "dep_growth_y2": 366838.21,
+      "tm_growth_y1": 344856.15,
+      "tm_growth_y2": 562719.66,
+      "new_clients_y1": 3,
+      "new_clients_y2": 3
+    },
+    {
+      "id": 5,
+      "loan_prod_y1": 459774.38,
+      "loan_prod_y2": 530073.63,
+      "dep_growth_y1": 302355.11,
+      "dep_growth_y2": 592819.51,
+      "tm_growth_y1": 408628.57,
+      "tm_growth_y2": 435963.6,
+      "new_clients_y1": 2,
+      "new_clients_y2": 1
+    },
+    {
+      "id": 6,
+      "loan_prod_y1": 445733.7,
+      "loan_prod_y2": 492699.0,
+      "dep_growth_y1": 559963.91,
+      "dep_growth_y2": 553305.64,
+      "tm_growth_y1": 290867.64,
+      "tm_growth_y2": 401287.93,
+      "new_clients_y1": 4,
+      "new_clients_y2": 2
+    },
+    {
+      "id": 7,
+      "loan_prod_y1": 514879.48,
+      "loan_prod_y2": 548315.88,
+      "dep_growth_y1": 516657.74,
+      "dep_growth_y2": 474674.47,
+      "tm_growth_y1": 366631.85,
+      "tm_growth_y2": 563257.24,
+      "new_clients_y1": 6,
+      "new_clients_y2": 4
+    },
+    {
+      "id": 8,
+      "loan_prod_y1": 533264.74,
+      "loan_prod_y2": 402618.53,
+      "dep_growth_y1": 533357.47,
+      "dep_growth_y2": 598238.06,
+      "tm_growth_y1": 460088.89,
+      "tm_growth_y2": 400585.03,
+      "new_clients_y1": 4,
+      "new_clients_y2": 0
+    },
+    {
+      "id": 9,
+      "loan_prod_y1": 579955.61,
+      "loan_prod_y2": 287889.2,
+      "dep_growth_y1": 281031.77,
+      "dep_growth_y2": 474600.08,
+      "tm_growth_y1": 539002.22,
+      "tm_growth_y2": 371705.91,
+      "new_clients_y1": 3,
+      "new_clients_y2": 6
+    },
+    {
+      "id": 10,
+      "loan_prod_y1": 576055.1,
+      "loan_prod_y2": 311202.07,
+      "dep_growth_y1": 474582.9,
+      "dep_growth_y2": 304601.86,
+      "tm_growth_y1": 255621.25,
+      "tm_growth_y2": 317079.96,
+      "new_clients_y1": 1,
+      "new_clients_y2": 5
+    }
+  ],
+  "behavior_metrics": [
+    {
+      "id": 1,
+      "avg_overall_rm_sat_y1": 305781.2,
+      "avg_overall_rm_sat_y2": 424953.05,
+      "client_calls_y1": 3,
+      "client_calls_y2": 2,
+      "prospect_calls_y1": 11,
+      "prospect_calls_y2": 16,
+      "strat_uploaded_y1": 11,
+      "strat_uploaded_y2": 18
+    },
+    {
+      "id": 2,
+      "avg_overall_rm_sat_y1": 423315.46,
+      "avg_overall_rm_sat_y2": 419678.12,
+      "client_calls_y1": 98,
+      "client_calls_y2": 41,
+      "prospect_calls_y1": 2,
+      "prospect_calls_y2": 14,
+      "strat_uploaded_y1": 13,
+      "strat_uploaded_y2": 20
+    },
+    {
+      "id": 3,
+      "avg_overall_rm_sat_y1": 545335.21,
+      "avg_overall_rm_sat_y2": 261570.82,
+      "client_calls_y1": 35,
+      "client_calls_y2": 26,
+      "prospect_calls_y1": 5,
+      "prospect_calls_y2": 20,
+      "strat_uploaded_y1": 6,
+      "strat_uploaded_y2": 16
+    },
+    {
+      "id": 4,
+      "avg_overall_rm_sat_y1": 449374.58,
+      "avg_overall_rm_sat_y2": 368814.71,
+      "client_calls_y1": 38,
+      "client_calls_y2": 17,
+      "prospect_calls_y1": 1,
+      "prospect_calls_y2": 8,
+      "strat_uploaded_y1": 3,
+      "strat_uploaded_y2": 14
+    },
+    {
+      "id": 5,
+      "avg_overall_rm_sat_y1": 404697.94,
+      "avg_overall_rm_sat_y2": 404839.4,
+      "client_calls_y1": 47,
+      "client_calls_y2": 54,
+      "prospect_calls_y1": 19,
+      "prospect_calls_y2": 6,
+      "strat_uploaded_y1": 14,
+      "strat_uploaded_y2": 13
+    },
+    {
+      "id": 6,
+      "avg_overall_rm_sat_y1": 583746.88,
+      "avg_overall_rm_sat_y2": 409614.63,
+      "client_calls_y1": 28,
+      "client_calls_y2": 63,
+      "prospect_calls_y1": 14,
+      "prospect_calls_y2": 7,
+      "strat_uploaded_y1": 16,
+      "strat_uploaded_y2": 18
+    },
+    {
+      "id": 7,
+      "avg_overall_rm_sat_y1": 412385.64,
+      "avg_overall_rm_sat_y2": 316886.75,
+      "client_calls_y1": 73,
+      "client_calls_y2": 88,
+      "prospect_calls_y1": 11,
+      "prospect_calls_y2": 0,
+      "strat_uploaded_y1": 12,
+      "strat_uploaded_y2": 4
+    },
+    {
+      "id": 8,
+      "avg_overall_rm_sat_y1": 588684.38,
+      "avg_overall_rm_sat_y2": 381256.97,
+      "client_calls_y1": 72,
+      "client_calls_y2": 88,
+      "prospect_calls_y1": 5,
+      "prospect_calls_y2": 20,
+      "strat_uploaded_y1": 20,
+      "strat_uploaded_y2": 10
+    },
+    {
+      "id": 9,
+      "avg_overall_rm_sat_y1": 438427.63,
+      "avg_overall_rm_sat_y2": 441723.72,
+      "client_calls_y1": 90,
+      "client_calls_y2": 95,
+      "prospect_calls_y1": 1,
+      "prospect_calls_y2": 18,
+      "strat_uploaded_y1": 16,
+      "strat_uploaded_y2": 8
+    },
+    {
+      "id": 10,
+      "avg_overall_rm_sat_y1": 545082.38,
+      "avg_overall_rm_sat_y2": 262000.31,
+      "client_calls_y1": 6,
+      "client_calls_y2": 69,
+      "prospect_calls_y1": 16,
+      "prospect_calls_y2": 16,
+      "strat_uploaded_y1": 17,
+      "strat_uploaded_y2": 17
+    }
+  ],
+  "opportunities_summary": [
+    {
+      "year": 2019,
+      "stage_1": 372050.67,
+      "stage_2": 536387.01,
+      "stage_3": 271575.97,
+      "stage_4": 337246.07,
+      "booked_ytd": 474257.6
+    },
+    {
+      "year": 2020,
+      "stage_1": 540201.94,
+      "stage_2": 430330.59,
+      "stage_3": 472829.73,
+      "stage_4": 333774.16,
+      "booked_ytd": 442231.25
+    },
+    {
+      "year": 2021,
+      "stage_1": 406553.17,
+      "stage_2": 570885.83,
+      "stage_3": 565137.2,
+      "stage_4": 424641.14,
+      "booked_ytd": 414977.1
+    }
+  ],
+  "opportunities_detail": [
+    {
+      "id": 1,
+      "relationship": "Maggio, Dickinson and Berge",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 2245212.88,
+      "date_closed": "2021-05-17T19:21:25Z"
+    },
+    {
+      "id": 2,
+      "relationship": "Lebsack, Bode and Purdy",
+      "product_type": "Line of Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 2034631.74,
+      "date_closed": "2021-05-06T22:29:32Z"
+    },
+    {
+      "id": 3,
+      "relationship": "Mayer Group",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 1",
+      "revenue": 1179799.46,
+      "date_closed": "2020-11-12T19:42:48Z"
+    },
+    {
+      "id": 4,
+      "relationship": "Rath-Rolfson",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 658477.48,
+      "date_closed": "2021-12-14T06:42:31Z"
+    },
+    {
+      "id": 5,
+      "relationship": "Volkman Inc",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Booked YTD",
+      "revenue": 2971756.92,
+      "date_closed": "2020-08-09T16:12:47Z"
+    },
+    {
+      "id": 6,
+      "relationship": "Brekke Inc",
+      "product_type": "Loan",
+      "sales_stage": "Commitment",
+      "stage": "Booked YTD",
+      "revenue": 2832739.0,
+      "date_closed": "2021-11-10T17:47:18Z"
+    },
+    {
+      "id": 7,
+      "relationship": "Hartmann-Jacobson",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Booked YTD",
+      "revenue": 3338488.07,
+      "date_closed": "2020-12-30T05:37:58Z"
+    },
+    {
+      "id": 8,
+      "relationship": "Koelpin, Connelly and Mann",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 3911589.13,
+      "date_closed": "2020-09-20T22:37:20Z"
+    },
+    {
+      "id": 9,
+      "relationship": "Turcotte, Bernhard and Kertzmann",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 1",
+      "revenue": 3855019.18,
+      "date_closed": "2021-07-16T16:05:32Z"
+    },
+    {
+      "id": 10,
+      "relationship": "Labadie-Jakubowski",
+      "product_type": "Loan",
+      "sales_stage": "Pending",
+      "stage": "Booked YTD",
+      "revenue": 4040688.72,
+      "date_closed": "2021-04-19T11:53:36Z"
+    },
+    {
+      "id": 11,
+      "relationship": "Daniel, Schmitt and Mosciski",
+      "product_type": "Line of Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 2",
+      "revenue": 1914860.29,
+      "date_closed": "2020-09-01T11:34:46Z"
+    },
+    {
+      "id": 12,
+      "relationship": "Collins-Fahey",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 1",
+      "revenue": 990128.59,
+      "date_closed": "2020-12-02T16:30:52Z"
+    },
+    {
+      "id": 13,
+      "relationship": "Langosh, Auer and Beier",
+      "product_type": "Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 3",
+      "revenue": 3574346.41,
+      "date_closed": "2021-11-06T16:33:59Z"
+    },
+    {
+      "id": 14,
+      "relationship": "Reichert-Morissette",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 1",
+      "revenue": 1854556.03,
+      "date_closed": "2020-10-07T13:06:05Z"
+    },
+    {
+      "id": 15,
+      "relationship": "Bins, Howe and Weimann",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 3",
+      "revenue": 1754243.65,
+      "date_closed": "2020-12-10T16:32:52Z"
+    },
+    {
+      "id": 16,
+      "relationship": "Greenholt, Swift and Haag",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 4",
+      "revenue": 652027.84,
+      "date_closed": "2020-09-26T22:10:01Z"
+    },
+    {
+      "id": 17,
+      "relationship": "Beahan-McKenzie",
+      "product_type": "Term Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 4144423.93,
+      "date_closed": "2021-12-04T05:47:12Z"
+    },
+    {
+      "id": 18,
+      "relationship": "Welch, West and Daugherty",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Booked YTD",
+      "revenue": 3404557.54,
+      "date_closed": "2021-08-21T11:49:42Z"
+    },
+    {
+      "id": 19,
+      "relationship": "Homenick LLC",
+      "product_type": "Term Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 3881547.37,
+      "date_closed": "2021-03-05T04:33:14Z"
+    },
+    {
+      "id": 20,
+      "relationship": "Collins, Ullrich and Dietrich",
+      "product_type": "Term Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Booked YTD",
+      "revenue": 1375705.77,
+      "date_closed": "2020-11-12T03:10:06Z"
+    },
+    {
+      "id": 21,
+      "relationship": "Huel and Sons",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 3031324.39,
+      "date_closed": "2020-08-06T08:18:12Z"
+    },
+    {
+      "id": 22,
+      "relationship": "Nolan, McDermott and Nolan",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 3665782.01,
+      "date_closed": "2020-10-31T01:49:22Z"
+    },
+    {
+      "id": 23,
+      "relationship": "Padberg-Kovacek",
+      "product_type": "Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 1",
+      "revenue": 1257065.16,
+      "date_closed": "2021-07-09T06:54:36Z"
+    },
+    {
+      "id": 24,
+      "relationship": "Schulist, Blanda and Bartoletti",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 4",
+      "revenue": 2570396.0,
+      "date_closed": "2021-11-30T04:49:42Z"
+    },
+    {
+      "id": 25,
+      "relationship": "O'Hara Group",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 2901687.72,
+      "date_closed": "2021-05-16T05:30:39Z"
+    },
+    {
+      "id": 26,
+      "relationship": "Cummerata, Toy and Oberbrunner",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 1",
+      "revenue": 1788812.59,
+      "date_closed": "2020-10-08T08:44:53Z"
+    },
+    {
+      "id": 27,
+      "relationship": "Medhurst, Terry and White",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 4137929.62,
+      "date_closed": "2021-12-06T10:09:13Z"
+    },
+    {
+      "id": 28,
+      "relationship": "Gleason-Huel",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 4027845.37,
+      "date_closed": "2021-11-29T19:45:51Z"
+    },
+    {
+      "id": 29,
+      "relationship": "Wolf-Hammes",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Booked YTD",
+      "revenue": 3039947.68,
+      "date_closed": "2021-06-27T14:38:24Z"
+    },
+    {
+      "id": 30,
+      "relationship": "Konopelski and Sons",
+      "product_type": "Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 2",
+      "revenue": 3519469.0,
+      "date_closed": "2021-03-19T00:30:25Z"
+    },
+    {
+      "id": 31,
+      "relationship": "Johnson, Dooley and Stehr",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 4166833.47,
+      "date_closed": "2021-12-09T06:31:19Z"
+    },
+    {
+      "id": 32,
+      "relationship": "Dietrich, Boyer and Gusikowski",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 2798423.56,
+      "date_closed": "2020-07-20T17:10:16Z"
+    },
+    {
+      "id": 33,
+      "relationship": "Legros Group",
+      "product_type": "Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 3",
+      "revenue": 1921646.15,
+      "date_closed": "2020-12-03T02:50:46Z"
+    },
+    {
+      "id": 34,
+      "relationship": "Roob-Bartell",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 4385837.0,
+      "date_closed": "2020-12-27T19:23:58Z"
+    },
+    {
+      "id": 35,
+      "relationship": "Harvey-Mueller",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 1",
+      "revenue": 2316635.0,
+      "date_closed": "2021-02-26T22:11:37Z"
+    },
+    {
+      "id": 36,
+      "relationship": "Gutmann-Watsica",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 2",
+      "revenue": 3625571.36,
+      "date_closed": "2020-07-29T21:37:05Z"
+    },
+    {
+      "id": 37,
+      "relationship": "Ledner Group",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Booked YTD",
+      "revenue": 1297087.72,
+      "date_closed": "2021-02-01T20:41:55Z"
+    },
+    {
+      "id": 38,
+      "relationship": "Bednar Inc",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Booked YTD",
+      "revenue": 1276266.0,
+      "date_closed": "2021-09-29T14:10:03Z"
+    },
+    {
+      "id": 39,
+      "relationship": "Kuhic LLC",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 3525137.0,
+      "date_closed": "2020-10-22T10:44:21Z"
+    },
+    {
+      "id": 40,
+      "relationship": "Luettgen, Willms and Ruecker",
+      "product_type": "Term Loan",
+      "sales_stage": "Pending",
+      "stage": "Booked YTD",
+      "revenue": 3352923.17,
+      "date_closed": "2021-01-05T02:14:52Z"
+    },
+    {
+      "id": 41,
+      "relationship": "Blanda-Fritsch",
+      "product_type": "Lease",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 3755778.11,
+      "date_closed": "2021-04-16T11:47:15Z"
+    },
+    {
+      "id": 42,
+      "relationship": "Hayes, Yost and Barton",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 2",
+      "revenue": 1563363.7,
+      "date_closed": "2021-08-19T06:30:46Z"
+    },
+    {
+      "id": 43,
+      "relationship": "Sipes-Champlin",
+      "product_type": "Term Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 2292665.69,
+      "date_closed": "2021-08-07T03:08:47Z"
+    },
+    {
+      "id": 44,
+      "relationship": "Kohler-Wisozk",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 955800.28,
+      "date_closed": "2020-12-25T22:37:50Z"
+    },
+    {
+      "id": 45,
+      "relationship": "Wisozk Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 2398967.0,
+      "date_closed": "2021-11-04T04:21:52Z"
+    },
+    {
+      "id": 46,
+      "relationship": "Hauck LLC",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 656600.14,
+      "date_closed": "2021-08-02T10:23:16Z"
+    },
+    {
+      "id": 47,
+      "relationship": "Lowe, Labadie and Quitzon",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 819846.43,
+      "date_closed": "2021-09-12T00:31:57Z"
+    },
+    {
+      "id": 48,
+      "relationship": "Murphy, Schmeler and Bashirian",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 870247.16,
+      "date_closed": "2021-09-01T11:18:46Z"
+    },
+    {
+      "id": 49,
+      "relationship": "Hirthe, Shanahan and Predovic",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 3",
+      "revenue": 2454002.0,
+      "date_closed": "2020-10-09T01:39:21Z"
+    },
+    {
+      "id": 50,
+      "relationship": "Mitchell-Hessel",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Proposal",
+      "stage": "Booked YTD",
+      "revenue": 932883.56,
+      "date_closed": "2020-07-15T01:39:54Z"
+    },
+    {
+      "id": 51,
+      "relationship": "O'Reilly-Pfeffer",
+      "product_type": "Lease",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 2534293.0,
+      "date_closed": "2021-04-20T08:56:11Z"
+    },
+    {
+      "id": 52,
+      "relationship": "Swaniawski-Greenfelder",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 992617.99,
+      "date_closed": "2021-10-26T10:15:30Z"
+    },
+    {
+      "id": 53,
+      "relationship": "Spinka Group",
+      "product_type": "Lease",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 4143979.55,
+      "date_closed": "2021-09-14T22:11:32Z"
+    },
+    {
+      "id": 54,
+      "relationship": "Kub Group",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 2447077.81,
+      "date_closed": "2020-10-11T10:02:44Z"
+    },
+    {
+      "id": 55,
+      "relationship": "Bradtke, Gutkowski and Leuschke",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 1488725.0,
+      "date_closed": "2021-05-01T13:36:18Z"
+    },
+    {
+      "id": 56,
+      "relationship": "Weber-Schuster",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 3",
+      "revenue": 4122684.48,
+      "date_closed": "2020-07-19T14:47:28Z"
+    },
+    {
+      "id": 57,
+      "relationship": "Koch LLC",
+      "product_type": "Line of Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 4",
+      "revenue": 726474.59,
+      "date_closed": "2021-09-06T13:07:37Z"
+    },
+    {
+      "id": 58,
+      "relationship": "Orn-Lubowitz",
+      "product_type": "Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 3121409.1,
+      "date_closed": "2021-10-08T11:10:39Z"
+    },
+    {
+      "id": 59,
+      "relationship": "Langworth, Mraz and Mitchell",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 3",
+      "revenue": 2827259.79,
+      "date_closed": "2021-07-04T19:45:17Z"
+    },
+    {
+      "id": 60,
+      "relationship": "Leffler, Harris and McGlynn",
+      "product_type": "Lease",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 841967.4,
+      "date_closed": "2020-10-18T04:19:28Z"
+    },
+    {
+      "id": 61,
+      "relationship": "Mosciski, Runte and Streich",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 2",
+      "revenue": 2023603.9,
+      "date_closed": "2020-10-13T14:05:30Z"
+    },
+    {
+      "id": 62,
+      "relationship": "Altenwerth and Sons",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 1",
+      "revenue": 3324025.76,
+      "date_closed": "2021-10-06T21:29:12Z"
+    },
+    {
+      "id": 63,
+      "relationship": "Moen Inc",
+      "product_type": "Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 3998691.0,
+      "date_closed": "2021-01-14T14:14:16Z"
+    },
+    {
+      "id": 64,
+      "relationship": "Lynch-Kreiger",
+      "product_type": "Line of Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 2474436.73,
+      "date_closed": "2021-10-20T08:54:37Z"
+    },
+    {
+      "id": 65,
+      "relationship": "Maggio Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 4493503.0,
+      "date_closed": "2020-08-12T07:21:24Z"
+    },
+    {
+      "id": 66,
+      "relationship": "Volkman-Streich",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 1",
+      "revenue": 2741512.32,
+      "date_closed": "2021-07-24T22:20:00Z"
+    },
+    {
+      "id": 67,
+      "relationship": "Willms-Herzog",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 1746329.71,
+      "date_closed": "2021-01-08T08:13:19Z"
+    },
+    {
+      "id": 68,
+      "relationship": "Swaniawski, Dare and Yost",
+      "product_type": "Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Booked YTD",
+      "revenue": 1920581.15,
+      "date_closed": "2020-07-17T22:29:07Z"
+    },
+    {
+      "id": 69,
+      "relationship": "Schumm Group",
+      "product_type": "Line of Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 1802591.0,
+      "date_closed": "2021-10-30T22:24:06Z"
+    },
+    {
+      "id": 70,
+      "relationship": "Heaney Group",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 3415332.0,
+      "date_closed": "2021-11-30T00:05:37Z"
+    },
+    {
+      "id": 71,
+      "relationship": "Altenwerth Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 3433237.74,
+      "date_closed": "2021-08-20T01:26:53Z"
+    },
+    {
+      "id": 72,
+      "relationship": "White-Emmerich",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 4396139.48,
+      "date_closed": "2021-09-02T05:44:19Z"
+    },
+    {
+      "id": 73,
+      "relationship": "Cronin, Hane and Gibson",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Booked YTD",
+      "revenue": 3401346.64,
+      "date_closed": "2021-09-26T15:42:54Z"
+    },
+    {
+      "id": 74,
+      "relationship": "Cartwright Group",
+      "product_type": "Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 3",
+      "revenue": 2666393.18,
+      "date_closed": "2021-10-10T16:23:08Z"
+    },
+    {
+      "id": 75,
+      "relationship": "Grant, Sipes and Skiles",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 1",
+      "revenue": 1173950.0,
+      "date_closed": "2021-05-21T10:29:58Z"
+    },
+    {
+      "id": 76,
+      "relationship": "DuBuque-Kovacek",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 4",
+      "revenue": 2243981.0,
+      "date_closed": "2021-12-22T17:18:41Z"
+    },
+    {
+      "id": 77,
+      "relationship": "Romaguera and Sons",
+      "product_type": "Line of Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 2",
+      "revenue": 950871.9,
+      "date_closed": "2021-12-15T14:10:52Z"
+    },
+    {
+      "id": 78,
+      "relationship": "Reichert Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 4",
+      "revenue": 2362160.32,
+      "date_closed": "2020-11-16T03:58:04Z"
+    },
+    {
+      "id": 79,
+      "relationship": "Macejkovic-Rutherford",
+      "product_type": "Lease",
+      "sales_stage": "Proposal",
+      "stage": "Stage 3",
+      "revenue": 1818718.05,
+      "date_closed": "2021-03-05T06:17:58Z"
+    },
+    {
+      "id": 80,
+      "relationship": "Weimann, Doyle and Bergstrom",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 2",
+      "revenue": 1659084.24,
+      "date_closed": "2020-11-26T10:14:33Z"
+    },
+    {
+      "id": 81,
+      "relationship": "Champlin Group",
+      "product_type": "Term Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 1",
+      "revenue": 1017815.91,
+      "date_closed": "2021-10-15T05:49:12Z"
+    },
+    {
+      "id": 82,
+      "relationship": "Tillman Inc",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 3",
+      "revenue": 1373592.81,
+      "date_closed": "2021-08-18T13:52:58Z"
+    },
+    {
+      "id": 83,
+      "relationship": "Hagenes-Jacobson",
+      "product_type": "Line of Credit",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 3932233.0,
+      "date_closed": "2021-03-06T04:02:51Z"
+    },
+    {
+      "id": 84,
+      "relationship": "Ortiz LLC",
+      "product_type": "Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 3",
+      "revenue": 2594671.0,
+      "date_closed": "2020-08-10T00:46:23Z"
+    },
+    {
+      "id": 85,
+      "relationship": "Lemke-Stanton",
+      "product_type": "Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 3",
+      "revenue": 1970993.39,
+      "date_closed": "2021-10-16T22:14:42Z"
+    },
+    {
+      "id": 86,
+      "relationship": "Bartell, Rogahn and Volkman",
+      "product_type": "Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 3081342.69,
+      "date_closed": "2021-04-19T17:54:45Z"
+    },
+    {
+      "id": 87,
+      "relationship": "Hirthe, Kirlin and McDermott",
+      "product_type": "Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 1155999.0,
+      "date_closed": "2020-10-18T07:46:53Z"
+    },
+    {
+      "id": 88,
+      "relationship": "Nienow LLC",
+      "product_type": "Line of Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 4264520.0,
+      "date_closed": "2021-04-28T09:50:47Z"
+    },
+    {
+      "id": 89,
+      "relationship": "Fadel-Johns",
+      "product_type": "Lease",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 2177592.78,
+      "date_closed": "2020-12-20T12:22:56Z"
+    },
+    {
+      "id": 90,
+      "relationship": "Smith Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Booked YTD",
+      "revenue": 3570485.54,
+      "date_closed": "2020-08-25T23:10:19Z"
+    },
+    {
+      "id": 91,
+      "relationship": "Rutherford, Labadie and Feeney",
+      "product_type": "Revolving Credit",
+      "sales_stage": "Pending",
+      "stage": "Stage 2",
+      "revenue": 3758579.58,
+      "date_closed": "2021-12-23T01:16:00Z"
+    },
+    {
+      "id": 92,
+      "relationship": "Labadie-Trantow",
+      "product_type": "Line of Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 1744815.0,
+      "date_closed": "2021-02-19T07:26:24Z"
+    },
+    {
+      "id": 93,
+      "relationship": "Langosh, Dickinson and Gleichner",
+      "product_type": "Loan",
+      "sales_stage": "Pending",
+      "stage": "Stage 4",
+      "revenue": 3400661.25,
+      "date_closed": "2021-11-29T16:26:46Z"
+    },
+    {
+      "id": 94,
+      "relationship": "Mitchell-Zemlak",
+      "product_type": "Term Loan",
+      "sales_stage": "Opportunity",
+      "stage": "Booked YTD",
+      "revenue": 2243872.15,
+      "date_closed": "2021-11-10T09:07:24Z"
+    },
+    {
+      "id": 95,
+      "relationship": "Orn-Beer",
+      "product_type": "Lease",
+      "sales_stage": "Opportunity",
+      "stage": "Stage 4",
+      "revenue": 3735898.7,
+      "date_closed": "2020-09-05T00:22:42Z"
+    },
+    {
+      "id": 96,
+      "relationship": "Ferry and Sons",
+      "product_type": "Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 3939112.0,
+      "date_closed": "2021-01-12T23:28:17Z"
+    },
+    {
+      "id": 97,
+      "relationship": "Bogisich Group",
+      "product_type": "Line of Credit",
+      "sales_stage": "Opportunity",
+      "stage": "Booked YTD",
+      "revenue": 3343429.0,
+      "date_closed": "2021-05-29T19:48:26Z"
+    },
+    {
+      "id": 98,
+      "relationship": "Lockman LLC",
+      "product_type": "Line of Credit",
+      "sales_stage": "Proposal",
+      "stage": "Stage 1",
+      "revenue": 3799603.7,
+      "date_closed": "2021-12-13T08:23:03Z"
+    },
+    {
+      "id": 99,
+      "relationship": "Friesen LLC",
+      "product_type": "Term Loan",
+      "sales_stage": "Commitment",
+      "stage": "Stage 2",
+      "revenue": 2731187.95,
+      "date_closed": "2021-11-25T06:42:44Z"
+    },
+    {
+      "id": 100,
+      "relationship": "Waelchi Inc",
+      "product_type": "Term Loan",
+      "sales_stage": "Proposal",
+      "stage": "Stage 3",
+      "revenue": 2292889.41,
+      "date_closed": "2021-07-29T05:08:34Z"
+    }
+  ]
+}

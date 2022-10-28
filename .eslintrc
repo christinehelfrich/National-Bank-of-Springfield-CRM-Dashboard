@@ -1,0 +1,104 @@
+{
+  "root": true,
+  "env": {
+    "browser": true,
+    "jest": true,
+    "amd": true,
+    "node": true,
+    "es6": true
+  },
+  "extends": [
+    "eslint:recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
+    "plugin:prettier/recommended",
+    "standard"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2021,
+    "sourceType": "module"
+  },
+  "settings": {
+    "react": {
+      "version": "detect"
+    }
+  },
+  "plugins": ["react", "react-hooks", "jsx-a11y", "import", "prettier"],
+  "rules": {
+    "comma-dangle": [
+      "error",
+      {
+        "arrays": "always-multiline",
+        "exports": "always-multiline",
+        "functions": "always-multiline",
+        "imports": "always-multiline",
+        "objects": "always-multiline"
+      }
+    ],
+    "import/extensions": "off",
+    "import/no-cycle": "off",
+    "import/no-anonymous-default-export": "off",
+    "import/no-extraneous-dependencies": [
+      "error",
+      {
+        "devDependencies": true
+      }
+    ],
+    "jsx-quotes": ["error", "prefer-double"],
+    "max-lines": ["warn", { "max": 300 }],
+    "max-params": ["warn", { "max": 5 }],
+    "multiline-ternary": "off",
+    "no-debugger": "warn",
+    "no-console": "off",
+    "no-plusplus": "off",
+    "no-shadow": "off",
+    "no-unused-vars": "warn",
+    "no-use-before-define": "warn",
+    "prefer-template": "error",
+    "prettier/prettier": [
+      "warn",
+      {
+        "htmlWhitespaceSensitivity": "strict",
+        "arrowParens": "avoid",
+        "bracketSpacing": true,
+        "endOfLine": "auto",
+        "jsxSingleQuote": false,
+        "printWidth": 80,
+        "semi": false,
+        "singleQuote": true,
+        "tabWidth": 2,
+        "trailingComma": "all",
+        "useTabs": false
+      }
+    ],
+    "react/jsx-boolean-value": "error",
+    "react/jsx-curly-brace-presence": "error",
+    "react/display-name": "off",
+    "react/jsx-filename-extension": [
+      "error",
+      {
+        "extensions": [".jsx", ".js"]
+      }
+    ],
+    "react/jsx-one-expression-per-line": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/jsx-tag-spacing": "error",
+    "react/jsx-uses-react": "off",
+    "react/no-unescaped-entities": "error",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "react/self-closing-comp": [
+      "error",
+      {
+        "component": true,
+        "html": true
+      }
+    ],
+    "react-hooks/exhaustive-deps": "warn",
+    "react-hooks/rules-of-hooks": "warn",
+    "space-before-function-paren": ["off", "always"]
+  }
+}

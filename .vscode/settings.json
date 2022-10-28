@@ -1,0 +1,23 @@
+{
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.codeActionsOnSave": {
+    "source.fixAll": false,
+    "source.organizeImports": false
+  },
+  "eslint.options": {
+    "overrideConfigFile": "./.eslintrc"
+  },
+  "eslint.validate": [
+    "html",
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact",
+    "react"
+  ],
+  "javascript.validate.enable": true,
+  "css.validate": false,
+  "less.validate": false,
+  "scss.validate": false
+}
