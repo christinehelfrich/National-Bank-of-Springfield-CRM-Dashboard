@@ -13,7 +13,7 @@ export const NbosCard = ({ bgColor, title, count, icon }) => {
       <div className="tw-min-w-[33%] tw-flex tw-justify-center tw-items-center">
         <NbosIcon icon={icon} color="#fff" bold />
       </div>
-      <div className="tw-grow tw-flex tw-felx-col tw-justify-center tw-items-left">
+      <div className="tw-grow tw-flex tw-flex-col tw-justify-center tw-items-left">
         <NbosText text={count} size="3xl" color="#fff" bold />
         <NbosText
           style={{ marginTop: 20 }}
