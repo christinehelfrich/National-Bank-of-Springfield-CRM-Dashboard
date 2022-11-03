@@ -29,7 +29,7 @@ export const NbosSummary2 = ({ pageData }) => {
       style={{ boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)', margin: '1rem' }}
     >
       {/* {results} */}
-      <Grid gridRow="span 2" item xs={1} sm={1} md={1} lg={1} xl={1}>
+      <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
           bgColor={'white'}
