@@ -1,12 +1,15 @@
-import PropTypes from 'prop-types'
-import React, { useState } from 'react'
-import { AgGridReact } from 'ag-grid-react' // the AG Grid React Component
+import { NbosTable } from './NbosTable'
 
-import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
-import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
+export default {
+  title: 'Molecules/NbosTable',
+  component: NbosTable,
+}
 
-export const NbosTable = () => {
-  const [rowData] = useState([
+const Template = args => <NbosTable {...args} />
+
+export const OpportunitiesTable = Template.bind({})
+OpportunitiesTable.args = {
+  rdata: [
     {
       Relationship: 'Relationship 1',
       ProductType: 'Loan',
@@ -42,38 +45,12 @@ export const NbosTable = () => {
       Revenue: '3.78',
       DateClosed: '5/2/2021',
     },
-  ])
-
-  const [columnDefs] = useState([
+  ],
+  columnNames: [
     { field: 'Relationship' },
     { field: 'ProductType' },
     { field: 'SalesStage' },
     { field: 'Revenue' },
     { field: 'DateClosed' },
-  ])
-
-  //   const rowStyle = { background: 'black' }
-
-  const getColumnStyle = params => {
-    if (params.node.columnIndex % 2 === 0) {
-      return { background: 'red' }
-    }
-  }
-
-  return (
-    <div className="ag-theme-alpine ag-style" style={{ height: 1600 }}>
-      <AgGridReact
-        // rowStyle={rowStyle}
-        getColumnStyle={getColumnStyle}
-        rowData={rowData}
-        columnDefs={columnDefs}
-        style={{ padding: '10px' }}
-      ></AgGridReact>
-    </div>
-  )
+  ],
 }
-// --ag-grid-size
-
-NbosTable.propTypes = {}
-
-NbosTable.defaultProps = {}

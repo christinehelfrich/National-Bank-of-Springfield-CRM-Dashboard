@@ -1,14 +1,14 @@
-import { NbosVertBar } from './NbosVertBar'
+import { NbosColumnChart } from './NbosColumnChart'
 
 export default {
-  title: 'Organisms/NbosVertBar',
-  component: NbosVertBar,
+  title: 'Molecules/NbosColumnChart',
+  component: NbosColumnChart,
 }
 
-const Template = args => <NbosVertBar {...args} />
+const Template = args => <NbosColumnChart {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const CurrentVSSameTimeLastYear = Template.bind({})
+CurrentVSSameTimeLastYear.args = {
   bgColor: '#1B6AF8',
   title: 'Current VS Same Time Last Year',
   yTitle: 'Revenue',

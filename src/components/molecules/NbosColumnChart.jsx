@@ -52,7 +52,7 @@ const options = {
   },
 }
 
-export const NbosVertBar = ({
+export const NbosColumnChart = ({
   title,
   categories,
   yTitle,
@@ -77,7 +77,7 @@ export const NbosVertBar = ({
   )
 }
 
-NbosVertBar.propTypes = {
+NbosColumnChart.propTypes = {
   bgColor: PropTypes.string,
   title: PropTypes.string,
   yTitle: PropTypes.string,
@@ -88,7 +88,7 @@ NbosVertBar.propTypes = {
   datasetTwoLabel: PropTypes.string,
 }
 
-NbosVertBar.defaultProps = {
+NbosColumnChart.defaultProps = {
   bgColor: 'black',
   title: 'No Title Propvided',
   yTitle: 'No Title Provided',

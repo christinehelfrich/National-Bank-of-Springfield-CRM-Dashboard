@@ -1,14 +1,14 @@
-import { NbosHorizBar } from './NbosHorizBar'
+import { NbosBarchart } from './NbosBarchart'
 
 export default {
-  title: 'Organisms/NbosHorizBar',
-  component: NbosHorizBar,
+  title: 'Molecules/NbosBarchart',
+  component: NbosBarchart,
 }
 
-const Template = args => <NbosHorizBar {...args} />
+const Template = args => <NbosBarchart {...args} />
 
-export const Primary = Template.bind({})
-Primary.args = {
+export const PatrickBarnesVSThisTimeLastYear = Template.bind({})
+PatrickBarnesVSThisTimeLastYear.args = {
   bgColor: '#1B6AF8',
   title: 'Patrick Barnes VS This Time Last Year',
   categories: [

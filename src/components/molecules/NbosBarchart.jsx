@@ -58,7 +58,7 @@ const options = {
   },
 }
 
-export const NbosHorizBar = ({
+export const NbosBarchart = ({
   title,
   categories,
   bgColor,
@@ -81,7 +81,7 @@ export const NbosHorizBar = ({
   )
 }
 
-NbosHorizBar.propTypes = {
+NbosBarchart.propTypes = {
   bgColor: PropTypes.string,
   title: PropTypes.string,
   categories: PropTypes.array,
@@ -91,7 +91,7 @@ NbosHorizBar.propTypes = {
   datasetTwoLabel: PropTypes.string,
 }
 
-NbosHorizBar.defaultProps = {
+NbosBarchart.defaultProps = {
   bgColor: 'black',
   title: 'No Title Propvided',
   categories: ['Not Provided', 'Not Provided'],

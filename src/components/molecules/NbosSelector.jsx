@@ -1,27 +1,21 @@
 //import { ToggleButtonGroup, ToggleButton } from '@mui/material'
 import PropTypes from 'prop-types'
 import { useState } from 'react'
-import './button.css'
-import { NbosText } from './NbosText'
+//import './button.css'
+import { NbosText } from '../atoms/NbosText'
 import * as React from 'react'
 import MuiToggleButton from '@mui/material/ToggleButton'
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
 import { styled, createTheme, ThemeProvider } from '@mui/material/styles'
 import { useEffect } from 'react'
 
-export const NbosLargeSelector = ({
-  bgColor,
-  size,
-  labels,
-  onChange,
-  ...props
-}) => {
+export const NbosSelector = ({ bgColor, size, labels, onChange, ...props }) => {
   const ToggleButton = styled(MuiToggleButton)(({ selectedcolor }) => ({
     border: `.25px solid ${bgColor}`,
     color: bgColor,
     uppercase: false,
-    padding: '.3rem 1.5rem .3rem',
-    borderRadius: '16px',
+    padding: '.5rem 2rem .5rem',
+    borderRadius: '12px',
     '&.Mui-selected, &.Mui-selected:hover': {
       color: 'white',
       backgroundColor: bgColor,
@@ -56,7 +50,7 @@ export const NbosLargeSelector = ({
         {labels.map(label => (
           <ToggleButton key={label} value={label}>
             <NbosText
-              style={{ marginTop: 10 }}
+              style={{ marginTop: 15 }}
               text={label}
               size="xs"
               color={toString(theme.palette.primary)}
@@ -68,14 +62,14 @@ export const NbosLargeSelector = ({
   )
 }
 
-NbosLargeSelector.propTypes = {
+NbosSelector.propTypes = {
   bgColor: PropTypes.string,
   size: PropTypes.oneOf(['small', 'medium', 'large']),
   labels: PropTypes.array.isRequired,
   onChange: PropTypes.func,
 }
 
-NbosLargeSelector.defaultProps = {
+NbosSelector.defaultProps = {
   bgColor: 'grey',
   onChange: undefined,
   labels: ['Not Provided'],
