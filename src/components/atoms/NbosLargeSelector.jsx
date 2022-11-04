@@ -35,7 +35,7 @@ export const NbosLargeSelector = ({
       },
     },
   })
-  const [alignment, setAlignment] = React.useState('')
+  const [alignment, setAlignment] = React.useState(labels[0])
 
   function handleAlignment(event, newAlignment) {
     setAlignment(newAlignment)

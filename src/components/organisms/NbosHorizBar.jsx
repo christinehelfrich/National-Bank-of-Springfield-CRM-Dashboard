@@ -7,6 +7,9 @@ import HighchartsReact from 'highcharts-react-official'
 const options = {
   chart: {
     type: 'bar',
+    style: {
+      fontFamily: '',
+    },
   },
   legend: {
     align: 'left',

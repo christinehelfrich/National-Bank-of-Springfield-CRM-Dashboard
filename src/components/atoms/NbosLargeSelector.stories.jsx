@@ -18,4 +18,7 @@ Primary.args = {
     'Treasury Management',
     'Other',
   ],
+  onChange: alignment => {
+    console.log(alignment)
+  },
 }

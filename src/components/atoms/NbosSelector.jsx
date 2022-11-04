@@ -17,7 +17,7 @@ export const NbosSelector = ({
   onChange,
   ...props
 }) => {
-  const ToggleButton = styled(MuiToggleButton)(({ selectedcolor }) => ({
+  const ToggleButton = styled(MuiToggleButton)(() => ({
     border: `.25px solid ${bgColor}`,
     color: bgColor,
     uppercase: false,
@@ -35,7 +35,7 @@ export const NbosSelector = ({
       },
     },
   })
-  const [alignment, setAlignment] = React.useState({ labelOne })
+  const [alignment, setAlignment] = React.useState(labelOne)
 
   function handleAlignment(event, newAlignment) {
     setAlignment(newAlignment)
