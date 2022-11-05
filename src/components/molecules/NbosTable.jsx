@@ -14,7 +14,6 @@ export const NbosTable = (
   rowHeight,
   headerHeight,
 ) => {
-  console.log(rdata.columnWidth)
   const [rowData] = useState([...rdata.rdata])
 
   const [columnDefs] = useState([...rdata.columnNames])
