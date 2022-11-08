@@ -8,6 +8,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 export const NbosTable = (
   rdata,
   columnNames,
+  rowNames,
   chartHeight,
   resizable,
   columnWidth,
@@ -18,13 +19,22 @@ export const NbosTable = (
 
   const [columnDefs] = useState([...rdata.columnNames])
 
+  const [rowDefs] = useState([...rdata.rowNames])
+
   const gridOptions = {
     suppressMenuHide: true,
     defaultColDef: {
       width: rdata.columnWidth,
       filter: 'number',
       sortable: true,
-      resizable: rdata.resizable,
+      //resizable: rdata.resizable,
+      cellStyle: () => ({
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: 'white',
+      }),
+      suppressSizeToFit: true,
     },
     enableCharts: true,
     animateRows: true,
@@ -63,9 +73,17 @@ export const NbosTable = (
   return (
     <div
       className="ag-theme-alpine ag-style"
-      style={{ height: rdata.chartHeight }}
+      style={{ height: window.innerHeight, width: '100%' }}
     >
-      <AgGridReact {...gridOptions} style={{ padding: '10px' }}></AgGridReact>
+      <AgGridReact
+        {...gridOptions}
+        style={{
+          padding: '10px',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+        }}
+      ></AgGridReact>
     </div>
   )
 }
@@ -74,6 +92,7 @@ export const NbosTable = (
 NbosTable.propTypes = {
   rdata: PropTypes.array,
   columnNames: PropTypes.array,
+  rowNames: PropTypes.array,
   chartHeight: PropTypes.number,
   resizable: PropTypes.bool,
   columnWidth: PropTypes.number,
@@ -84,6 +103,7 @@ NbosTable.propTypes = {
 NbosTable.defaultProps = {
   rdata: [{ 'Data Not Provided': 'Data Not Provided' }],
   columnNames: [{ field: 'Data Not Provided' }],
+  rowNames: [{ field: 'Data Not Provided' }],
   chartHeight: 1600,
   resizable: false,
   columnWidth: 150,

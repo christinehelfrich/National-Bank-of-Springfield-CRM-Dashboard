@@ -47,10 +47,13 @@ OpportunitiesTable.args = {
     },
   ],
   columnNames: [
-    { field: 'Relationship' },
+    {
+      field: 'Relationship',
+    },
     { field: 'ProductType' },
     { field: 'SalesStage' },
     { field: 'Revenue' },
     { field: 'DateClosed' },
   ],
+  rowHeight: 80,
 }

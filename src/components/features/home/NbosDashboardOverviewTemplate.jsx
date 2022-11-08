@@ -14,14 +14,14 @@ export const NbosDashboardOverviewTemplate = () => {
     <Grid
       direction={'row'}
       container
-      spacing={{ xs: 3, md: 3 }}
-      columns={{ xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }}
-      rows={{ xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }}
+      spacing={{ xs: 2, md: 2 }}
+      columns={{ xs: 1, sm: 3, md: 4, lg: 4, xl: 4 }}
+      rows={{ xs: 4, sm: 3, md: 3, lg: 3, xl: 3 }}
     >
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosProfile userData={user} />
       </Grid>
-      <Grid item xs={2} sm={2} md={2} lg={2} xl={2}>
+      <Grid item xs={1} sm={2} md={3} lg={3} xl={3}>
         <NbosClientOverview pageData={client} />
         <Nbos1Summary pageData={summary1} />
         <NbosSummary2 pageData={summary2} />

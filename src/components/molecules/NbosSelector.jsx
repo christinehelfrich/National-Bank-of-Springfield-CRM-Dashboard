@@ -70,8 +70,10 @@ NbosSelector.propTypes = {
 }
 
 NbosSelector.defaultProps = {
-  bgColor: 'grey',
-  onChange: undefined,
-  labels: ['Not Provided'],
+  bgColor: '#eee',
+  onChange: alignment => {
+    console.log(alignment)
+  },
+  labels: ['Not Provided', 'Not Provided 2'],
   size: 'medium',
 }

@@ -593,32 +593,16 @@ code {
   height: 120px;
 }
 
-.tw-h-screen {
-  height: 100vh;
-}
-
-.tw-h-\[220px\] {
-  height: 220px;
-}
-
-.tw-h-\[180px\] {
-  height: 180px;
-}
-
-.tw-h-\[50\%\] {
-  height: 50%;
-}
-
 .tw-h-\[100\%\] {
   height: 100%;
 }
 
-.tw-w-full {
-  width: 100%;
+.tw-h-screen {
+  height: 100vh;
 }
 
-.tw-w-\[50\%\] {
-  width: 50%;
+.tw-w-full {
+  width: 100%;
 }
 
 .tw-w-\[100\%\] {
