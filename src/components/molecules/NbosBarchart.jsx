@@ -93,7 +93,6 @@ NbosBarchart.propTypes = {
 
 NbosBarchart.defaultProps = {
   bgColor: 'black',
-  title: 'No Title Propvided',
   categories: ['Not Provided', 'Not Provided'],
   datasetOne: [1, 1],
   datasetOneLabel: 'Not Provided',
