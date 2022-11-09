@@ -38,7 +38,8 @@ NbosPage.propTypes = {
 }
 
 NbosPage.defaultProps = {
-  bgColor: '#ff0000',
+  bgColor: '#fff',
   title: 'Not Provided',
+  count: 0,
   value: 0,
 }

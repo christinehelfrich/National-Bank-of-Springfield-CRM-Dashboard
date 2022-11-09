@@ -7,6 +7,9 @@ export default {
 
 const Template = args => <NbosTable {...args} />
 
+export const Primary = Template.bind({})
+Primary.args = {}
+
 export const OpportunitiesTable = Template.bind({})
 OpportunitiesTable.args = {
   rdata: [

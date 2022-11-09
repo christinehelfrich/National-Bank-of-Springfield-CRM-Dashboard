@@ -7,6 +7,9 @@ export default {
 
 const Template = args => <NbosSelector {...args} />
 
+export const Primary = Template.bind({})
+Primary.args = {}
+
 export const Large = Template.bind({})
 Large.args = {
   bgColor: '#1B6AF8',

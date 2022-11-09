@@ -70,7 +70,7 @@ NbosSelector.propTypes = {
 }
 
 NbosSelector.defaultProps = {
-  bgColor: '#eee',
+  bgColor: '#010101',
   onChange: alignment => {
     console.log(alignment)
   },

@@ -11,9 +11,7 @@ export default {
 const Template = args => <NbosPageset {...args} />
 
 export const Primary = Template.bind({})
-Primary.args = {
-  pageData: client,
-}
+Primary.args = {}
 
 export const Client = Template.bind({})
 Client.args = {

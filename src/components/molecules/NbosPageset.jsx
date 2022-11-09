@@ -34,5 +34,9 @@ NbosPageset.propTypes = {
 }
 
 NbosPageset.defaultProps = {
-  pageData: {},
+  pageData: {
+    data_not_provided: 0,
+    data2_not_provided: 0,
+    data3_not_provided: 0,
+  },
 }
