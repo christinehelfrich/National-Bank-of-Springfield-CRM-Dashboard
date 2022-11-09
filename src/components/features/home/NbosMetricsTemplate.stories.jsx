@@ -1,4 +1,4 @@
-import { NbosMetricsTemplate } from './NbosMetricsTemplate'
+import { NbosMetricsTemplate } from './NbosOpportunitiesSummaryTemplate'
 
 export default {
   title: 'Templates/NbosMetricsTemplate',
