@@ -7,6 +7,9 @@ export default {
 
 const Template = args => <NbosBarchart {...args} />
 
+export const Primary = Template.bind({})
+Primary.args = {}
+
 export const PatrickBarnesVSThisTimeLastYear = Template.bind({})
 PatrickBarnesVSThisTimeLastYear.args = {
   bgColor: '#1B6AF8',
