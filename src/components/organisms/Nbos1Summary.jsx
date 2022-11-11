@@ -10,7 +10,7 @@ export const Nbos1Summary = ({ pageData }) => {
       <Grid key={key} item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
+          bgColor="white"
           title={key}
           count={pageData[key]}
         />
@@ -32,16 +32,16 @@ export const Nbos1Summary = ({ pageData }) => {
       <Grid gridRow="span 2" item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'TTM Avg Loan Balance'}
+          bgColor="white"
+          title="TTM Avg Loan Balance"
           count={pageData['ttm_avg_loan_balance']}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'TTM Avg Credit Commitments'}
+          bgColor="white"
+          title="TTM Avg Credit Commitments"
           count={pageData['ttm_avg_credit_commitments']}
         />
       </Grid>
