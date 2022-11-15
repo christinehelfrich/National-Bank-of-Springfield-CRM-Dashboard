@@ -6,6 +6,9 @@ import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 import { NbosText } from 'components/atoms/NbosText'
 import { NbosButton } from 'components/atoms/NbosButton'
+import { useEffect } from 'react'
+import { useCallback } from 'react'
+import { useRef } from 'react'
 
 export const NbosOpportunitiesTableTemplate = (
   rdata,
@@ -17,9 +20,23 @@ export const NbosOpportunitiesTableTemplate = (
   rowHeight,
   headerHeight,
 ) => {
-  const [showFullPipe, setShowFullPope] = useState(false)
+  const formattedRows = []
+  rdata.rdata.map(item => {
+    let row = {
+      Relationship: `Relationship ${item.client_id}`,
+      ProductType: item.product_type,
+      SalesStage: item.sales_stage,
+      Revenue: item.revenue,
+      DateClosed: item.date_closed,
+    }
+    formattedRows.push(row)
+  })
 
-  const [rowData] = useState([...rdata.rdata])
+  const gridRef = useRef()
+
+  const [shortenPipe, setShortenPipe] = useState(true)
+
+  const [rowData] = useState([...formattedRows])
 
   const [columnDefs] = useState([...rdata.columnNames])
 
@@ -70,7 +87,27 @@ export const NbosOpportunitiesTableTemplate = (
     columnDefs,
     rowData,
     enableFillHandle: true,
+    paginationPageSize: 5,
+    pagination: shortenPipe,
+    suppressPaginationPanel: true,
   }
+
+  const handleClick = e => {
+    //console.log(shortenPipe)
+    setShortenPipe(!shortenPipe)
+    //console.log(shortenPipe)
+    let value
+    if (shortenPipe == true) {
+      value = 5
+    } else {
+      value = 100
+    }
+    gridRef.current.api.paginationSetPageSize(Number(value))
+  }
+
+  useEffect(() => {
+    console.log(shortenPipe)
+  }, [shortenPipe])
 
   return (
     <>
@@ -85,15 +122,18 @@ export const NbosOpportunitiesTableTemplate = (
       >
         <div
           style={{
-            borderBottom: 'solid 2px #1B6AF8',
+            borderBottom: shortenPipe ? '' : 'solid 2px #1B6AF8',
             width: '10rem',
             padding: '.5rem',
             marginLeft: '1.2rem',
           }}
         >
-          <NbosText text="Top 5 Opportunities" size="sm" bold="True" />
+          <button onClick={handleClick}>
+            <NbosText text="Top 5 Opportunities" size="sm" bold={true} />
+          </button>
         </div>
         <AgGridReact
+          ref={gridRef}
           {...gridOptions}
           domLayout={'autoHeight'}
           style={{
@@ -110,7 +150,13 @@ export const NbosOpportunitiesTableTemplate = (
             borderBottom: 'solid .5px #D3D3D3',
           }}
         >
-          <NbosText text="Show Full Pipeline" size="sm" color="#1B6AF8" />
+          <button onClick={handleClick}>
+            <NbosText
+              text={shortenPipe ? 'Shorten Pipeline' : 'Show Full Pipeline'}
+              size="sm"
+              color="#1B6AF8"
+            />
+          </button>
         </div>
       </div>
     </>
