@@ -4,6 +4,7 @@ import React from 'react'
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { NbosText } from 'components/atoms/NbosText'
+import { convertNum } from 'services/convertNum'
 
 const options = {
   chart: {
@@ -24,11 +25,18 @@ const options = {
       enabled: true,
     },
   },
-
+  tooltip: {
+    formatter: function () {
+      return '$' + convertNum(this.y)
+    },
+  },
   plotOptions: {
     column: {
       dataLabels: {
         enabled: false,
+        formatter: function () {
+          return convertNum(this.y)
+        },
       },
 
       groupPadding: 0.2,
@@ -53,15 +61,29 @@ const options = {
 }
 
 export const NbosColumnChart = ({
+  data,
   title,
   categories,
   yTitle,
   bgColor,
   datasetOneLabel,
   datasetTwoLabel,
-  datasetOne,
-  datasetTwo,
 }) => {
+  let datasetOne = []
+  let datasetTwo = []
+
+  datasetOne.push(data[1].stage_1)
+  datasetOne.push(data[1].stage_2)
+  datasetOne.push(data[1].stage_3)
+  datasetOne.push(data[1].stage_4)
+  datasetOne.push(data[1].booked_ytd)
+
+  datasetTwo.push(data[2].stage_1)
+  datasetTwo.push(data[2].stage_2)
+  datasetTwo.push(data[2].stage_3)
+  datasetTwo.push(data[2].stage_4)
+  datasetTwo.push(data[2].booked_ytd)
+
   options.title.text = title
   options.xAxis.categories = categories
   options.yAxis.title.text = yTitle
@@ -78,6 +100,7 @@ export const NbosColumnChart = ({
 }
 
 NbosColumnChart.propTypes = {
+  data: PropTypes.array,
   bgColor: PropTypes.string,
   title: PropTypes.string,
   yTitle: PropTypes.string,
@@ -89,12 +112,42 @@ NbosColumnChart.propTypes = {
 }
 
 NbosColumnChart.defaultProps = {
+  data: [
+    {
+      year: 0,
+      stage_1: 1,
+      stage_2: 1,
+      stage_3: 1,
+      stage_4: 1,
+      booked_ytd: 1,
+    },
+    {
+      year: 0,
+      stage_1: 1,
+      stage_2: 1,
+      stage_3: 1,
+      stage_4: 1,
+      booked_ytd: 1,
+    },
+    {
+      year: 0,
+      stage_1: 1,
+      stage_2: 1,
+      stage_3: 1,
+      stage_4: 1,
+      booked_ytd: 1,
+    },
+  ],
   bgColor: 'black',
   title: 'No Title Propvided',
   yTitle: 'No Title Provided',
-  categories: ['Not Provided', 'Not Provided'],
-  datasetOne: [1, 1],
+  categories: [
+    'Not Provided',
+    'Not Provided',
+    'Not Provided',
+    'Not Provided',
+    'Not Provided',
+  ],
   datasetOneLabel: 'Not Provided',
-  datasetTwo: [1, 1],
   datasetTwoLabel: 'Not Provided',
 }

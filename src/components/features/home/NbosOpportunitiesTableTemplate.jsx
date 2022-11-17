@@ -9,6 +9,7 @@ import { NbosButton } from 'components/atoms/NbosButton'
 import { useEffect } from 'react'
 import { useCallback } from 'react'
 import { useRef } from 'react'
+import { convertNum, convertDate } from 'services/convertNum'
 
 export const NbosOpportunitiesTableTemplate = (
   rdata,
@@ -26,8 +27,8 @@ export const NbosOpportunitiesTableTemplate = (
       Relationship: `Relationship ${item.client_id}`,
       ProductType: item.product_type,
       SalesStage: item.sales_stage,
-      Revenue: item.revenue,
-      DateClosed: item.date_closed,
+      Revenue: `$ ${convertNum(item.revenue)}`,
+      DateClosed: convertDate(item.date_closed),
     }
     formattedRows.push(row)
   })

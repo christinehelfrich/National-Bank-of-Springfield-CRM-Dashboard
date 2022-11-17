@@ -1,4 +1,5 @@
 import { NbosBarchart } from './NbosBarchart'
+import { BehaviorMetricsTable } from 'stories/data/behaviorMetricsTable'
 
 export default {
   title: 'Molecules/NbosBarchart',
@@ -12,16 +13,15 @@ Primary.args = {}
 
 export const PatrickBarnesVSThisTimeLastYear = Template.bind({})
 PatrickBarnesVSThisTimeLastYear.args = {
+  data: BehaviorMetricsTable,
+  clientId: 1,
   bgColor: '#1B6AF8',
-  title: 'Patrick Barnes VS This Time Last Year',
   categories: [
     'Avg. Overall RM Satisfaction',
     'Client Calls',
     'Prospect Calls',
     'Strategies Updated',
   ],
-  datasetOne: [4.2, 54, 2, 6],
   datasetOneLabel: 'RM',
-  datasetTwo: [5, 84, 11, 4],
   datasetTwoLabel: 'This Time Last Year',
 }

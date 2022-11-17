@@ -3,6 +3,8 @@ import React from 'react'
 // Load Highcharts
 import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
+import { users } from 'stories/data/testData-users'
+import { convertNum } from 'services/convertNum'
 
 const options = {
   chart: {
@@ -29,11 +31,20 @@ const options = {
     tickLength: 0,
     minorGridLineWidth: 0,
   },
+  tooltip: {
+    formatter: function () {
+      return convertNum(this.y)
+    },
+  },
 
   plotOptions: {
     bar: {
+      colorByPoint: true,
       dataLabels: {
         enabled: true,
+        formatter: function () {
+          return convertNum(this.y)
+        },
       },
       borderRadius: 10,
       borderWidth: 10,
@@ -59,21 +70,48 @@ const options = {
 }
 
 export const NbosBarchart = ({
-  title,
+  data,
+  clientId,
   categories,
   bgColor,
   datasetOneLabel,
   datasetTwoLabel,
-  datasetOne,
-  datasetTwo,
 }) => {
-  options.title.text = title
+  let datasetOne = []
+  let datasetTwo = []
+
+  datasetOne.push(data[clientId].avg_overall_rm_sat_y1)
+  datasetOne.push(data[clientId].client_calls_y1)
+  datasetOne.push(data[clientId].prospect_calls_y1)
+  datasetOne.push(data[clientId].strat_uploaded_y1)
+
+  datasetTwo.push(data[clientId].avg_overall_rm_sat_y2)
+  datasetTwo.push(data[clientId].client_calls_y2)
+  datasetTwo.push(data[clientId].prospect_calls_y2)
+  datasetTwo.push(data[clientId].strat_uploaded_y2)
+
+  //options.title.text = `${users[clientId].tl_first_name} ${users[clientId].tl_last_name} VS This Time Last Year`
+  options.title.text = ''
   options.xAxis.categories = categories
   options.series[0].color = bgColor
   options.series[0].name = datasetOneLabel
   options.series[0].data = datasetOne
   options.series[1].name = datasetTwoLabel
   options.series[1].data = datasetTwo
+
+  options.series[1].colors = [
+    'lightgrey',
+    'lightgrey',
+    'lightgrey',
+    'lightgrey',
+  ]
+
+  if (data[clientId].prospect_calls_y1 <= 2) {
+    options.series[0].colors = [bgColor, bgColor, 'red', bgColor]
+  } else {
+    options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
+  }
+
   return (
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} />
@@ -82,20 +120,31 @@ export const NbosBarchart = ({
 }
 
 NbosBarchart.propTypes = {
+  data: PropTypes.array,
+  clientId: PropTypes.number,
   bgColor: PropTypes.string,
-  title: PropTypes.string,
   categories: PropTypes.array,
-  datasetOne: PropTypes.array,
   datasetOneLabel: PropTypes.string,
-  datasetTwo: PropTypes.array,
   datasetTwoLabel: PropTypes.string,
 }
 
 NbosBarchart.defaultProps = {
+  data: [
+    {
+      user_id: 1,
+      avg_overall_rm_sat_y1: 1,
+      avg_overall_rm_sat_y2: 1,
+      client_calls_y1: 1,
+      client_calls_y2: 1,
+      prospect_calls_y1: 1,
+      prospect_calls_y2: 1,
+      strat_uploaded_y1: 1,
+      strat_uploaded_y2: 1,
+    },
+  ],
+  clientId: 0,
   bgColor: 'black',
-  categories: ['Not Provided', 'Not Provided'],
-  datasetOne: [1, 1],
+  categories: ['Not Provided', 'Not Provided', 'Not Provided', 'Not Provided'],
   datasetOneLabel: 'Not Provided',
-  datasetTwo: [1, 1],
   datasetTwoLabel: 'Not Provided',
 }

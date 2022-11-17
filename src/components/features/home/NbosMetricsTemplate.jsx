@@ -4,8 +4,9 @@ import { NbosSelector } from 'components/molecules/NbosSelector'
 import { NbosBarchart } from 'components/molecules/NbosBarchart'
 import { NbosText } from 'components/atoms/NbosText'
 import { convertNum } from 'services/convertNum'
-
-export const NbosMetricsTemplate = () => {
+import { BehaviorMetricsTable } from 'stories/data/behaviorMetricsTable'
+import { users } from 'stories/data/testData-users'
+export const NbosMetricsTemplate = ({ clientId }) => {
   return (
     <Grid
       direction={'row'}
@@ -23,7 +24,10 @@ export const NbosMetricsTemplate = () => {
         xl={1}
         style={{ paddingTop: '3rem', paddingLeft: '3rem' }}
       >
-        <NbosText size="xl" text="Patrick Barnes VS This Time Last Year" />
+        <NbosText
+          size="xl"
+          text={`${users[clientId].tl_first_name} ${users[clientId].tl_last_name} VS This Time Last Year`}
+        />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosSelector
@@ -36,6 +40,8 @@ export const NbosMetricsTemplate = () => {
       </Grid>
       <Grid item xs={1} sm={2} md={2} lg={2} xl={2}>
         <NbosBarchart
+          data={BehaviorMetricsTable}
+          clientId={1}
           bgColor="#1B6AF8"
           categories={[
             'Avg. Overall RM Satisfaction',
@@ -43,9 +49,7 @@ export const NbosMetricsTemplate = () => {
             'Prospect Calls',
             'Strategies Updated',
           ]}
-          datasetOne={[4.2, 54, 2, 6]}
           datasetOneLabel="RM"
-          datasetTwo={[5, 84, 11, 4]}
           datasetTwoLabel="This Time Last Year"
         />
       </Grid>
@@ -53,6 +57,10 @@ export const NbosMetricsTemplate = () => {
   )
 }
 
-NbosMetricsTemplate.propTypes = {}
+NbosMetricsTemplate.propTypes = {
+  clientId: PropTypes.number,
+}
 
-NbosMetricsTemplate.defaultProps = {}
+NbosMetricsTemplate.defaultProps = {
+  clientId: 0,
+}
