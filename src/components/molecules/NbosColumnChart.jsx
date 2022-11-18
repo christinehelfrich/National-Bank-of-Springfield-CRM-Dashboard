@@ -5,13 +5,13 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { NbosText } from 'components/atoms/NbosText'
 import { convertNum } from 'services/convertNum'
+import { OpportunitiesSummaryTable } from '../../stories/data/opportunitiesSummaryTable'
 
 const options = {
   chart: {
     type: 'column',
   },
   title: {
-    useHTML: true,
     text: 'NA',
   },
   xAxis: {
@@ -63,26 +63,41 @@ const options = {
 export const NbosColumnChart = ({
   data,
   title,
-  categories,
-  yTitle,
   bgColor,
   datasetOneLabel,
   datasetTwoLabel,
 }) => {
   let datasetOne = []
   let datasetTwo = []
+  let allRowData = []
+  let categories = []
+  let yTitle = 'Not Provided'
 
-  datasetOne.push(data[1].stage_1)
-  datasetOne.push(data[1].stage_2)
-  datasetOne.push(data[1].stage_3)
-  datasetOne.push(data[1].stage_4)
-  datasetOne.push(data[1].booked_ytd)
+  if (data == 'OpportunitiesSummaryTable') {
+    allRowData = OpportunitiesSummaryTable
+    categories = ['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Booked YTD']
+    yTitle = 'Revenue'
+    for (const item in allRowData[0]) {
+      if (item != 'year') {
+        let datasetOneItem = allRowData[1][item]
+        datasetOne.push(datasetOneItem)
 
-  datasetTwo.push(data[2].stage_1)
-  datasetTwo.push(data[2].stage_2)
-  datasetTwo.push(data[2].stage_3)
-  datasetTwo.push(data[2].stage_4)
-  datasetTwo.push(data[2].booked_ytd)
+        let datasetTwoItem = allRowData[2][item]
+        datasetTwo.push(datasetTwoItem)
+      }
+    }
+  } else {
+    allRowData = [{ NotProvided: 1 }, { NotProvided: 1 }]
+    categories = ['NotProvided']
+
+    for (const item in allRowData[0]) {
+      let chartData1 = allRowData[0][item]
+      datasetOne.push(chartData1)
+
+      let chartData2 = allRowData[1][item]
+      datasetTwo.push(chartData2)
+    }
+  }
 
   options.title.text = title
   options.xAxis.categories = categories
@@ -92,6 +107,7 @@ export const NbosColumnChart = ({
   options.series[0].data = datasetOne
   options.series[1].name = datasetTwoLabel
   options.series[1].data = datasetTwo
+
   return (
     <div>
       <HighchartsReact highcharts={Highcharts} options={options} />
@@ -100,54 +116,17 @@ export const NbosColumnChart = ({
 }
 
 NbosColumnChart.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.oneOf(['OpportunitiesSummaryTable', '']),
   bgColor: PropTypes.string,
   title: PropTypes.string,
-  yTitle: PropTypes.string,
-  categories: PropTypes.array,
-  datasetOne: PropTypes.array,
   datasetOneLabel: PropTypes.string,
-  datasetTwo: PropTypes.array,
   datasetTwoLabel: PropTypes.string,
 }
 
 NbosColumnChart.defaultProps = {
-  data: [
-    {
-      year: 0,
-      stage_1: 1,
-      stage_2: 1,
-      stage_3: 1,
-      stage_4: 1,
-      booked_ytd: 1,
-    },
-    {
-      year: 0,
-      stage_1: 1,
-      stage_2: 1,
-      stage_3: 1,
-      stage_4: 1,
-      booked_ytd: 1,
-    },
-    {
-      year: 0,
-      stage_1: 1,
-      stage_2: 1,
-      stage_3: 1,
-      stage_4: 1,
-      booked_ytd: 1,
-    },
-  ],
+  data: '',
   bgColor: 'black',
   title: 'No Title Propvided',
-  yTitle: 'No Title Provided',
-  categories: [
-    'Not Provided',
-    'Not Provided',
-    'Not Provided',
-    'Not Provided',
-    'Not Provided',
-  ],
   datasetOneLabel: 'Not Provided',
   datasetTwoLabel: 'Not Provided',
 }

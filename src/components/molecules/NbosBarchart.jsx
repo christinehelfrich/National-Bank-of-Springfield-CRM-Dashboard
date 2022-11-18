@@ -5,6 +5,8 @@ import Highcharts from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
 import { users } from 'stories/data/testData-users'
 import { convertNum } from 'services/convertNum'
+import { BehaviorMetricsTable } from 'stories/data/behaviorMetricsTable'
+import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
 
 const options = {
   chart: {
@@ -54,13 +56,11 @@ const options = {
     {
       name: 'NA',
       data: [],
-      color: 'grey',
       lineWidth: 5,
     },
     {
       name: 'NA',
       data: [],
-      color: 'lightgrey',
       lineWidth: 5,
     },
   ],
@@ -72,23 +72,55 @@ const options = {
 export const NbosBarchart = ({
   data,
   clientId,
-  categories,
   bgColor,
   datasetOneLabel,
   datasetTwoLabel,
 }) => {
   let datasetOne = []
   let datasetTwo = []
+  let rowData = []
+  let categories = []
 
-  datasetOne.push(data[clientId].avg_overall_rm_sat_y1)
-  datasetOne.push(data[clientId].client_calls_y1)
-  datasetOne.push(data[clientId].prospect_calls_y1)
-  datasetOne.push(data[clientId].strat_uploaded_y1)
+  if (data == 'BehaviorMetricsTable') {
+    rowData = BehaviorMetricsTable
+    categories = [
+      'Avg. Overall RM Satisfaction',
+      'Client Calls',
+      'Prospect Calls',
+      'Strategies Updated',
+    ]
+    if (rowData[clientId].prospect_calls_y1 <= 2) {
+      options.series[0].colors = [bgColor, bgColor, 'red', bgColor]
+    }
+  } else if (data == 'outcomeMetricsTable') {
+    rowData = outcomeMetricsTable
+    categories = [
+      'Loan Production',
+      'Deposit Growth',
+      'TM Growth',
+      'New Clients',
+    ]
+    if (rowData[clientId].new_clients_y1 <= 2) {
+      options.series[0].colors = [bgColor, bgColor, bgColor, 'red']
+    }
+  } else {
+    rowData = [{ NotProvided: 1, NotProvided: 1 }]
+    categories = ['Not Provided', 'Not Provided']
+  }
 
-  datasetTwo.push(data[clientId].avg_overall_rm_sat_y2)
-  datasetTwo.push(data[clientId].client_calls_y2)
-  datasetTwo.push(data[clientId].prospect_calls_y2)
-  datasetTwo.push(data[clientId].strat_uploaded_y2)
+  for (const item in rowData[clientId]) {
+    if (item.slice(-2) == 'y1') {
+      let chartData1 = rowData[clientId][item]
+      datasetOne.push(chartData1)
+    } else if (item.slice(-2) == 'y2') {
+      let chartData2 = rowData[clientId][item]
+      datasetTwo.push(chartData2)
+    } else if (item == 'user_id') {
+    } else {
+      datasetOne.push(rowData[clientId][item])
+      datasetTwo.push(rowData[clientId][item])
+    }
+  }
 
   //options.title.text = `${users[clientId].tl_first_name} ${users[clientId].tl_last_name} VS This Time Last Year`
   options.title.text = ''
@@ -106,11 +138,7 @@ export const NbosBarchart = ({
     'lightgrey',
   ]
 
-  if (data[clientId].prospect_calls_y1 <= 2) {
-    options.series[0].colors = [bgColor, bgColor, 'red', bgColor]
-  } else {
-    options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
-  }
+  options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
 
   return (
     <div>
@@ -120,31 +148,17 @@ export const NbosBarchart = ({
 }
 
 NbosBarchart.propTypes = {
-  data: PropTypes.array,
+  data: PropTypes.oneOf(['BehaviorMetricsTable', 'outcomeMetricsTable', '']),
   clientId: PropTypes.number,
   bgColor: PropTypes.string,
-  categories: PropTypes.array,
   datasetOneLabel: PropTypes.string,
   datasetTwoLabel: PropTypes.string,
 }
 
 NbosBarchart.defaultProps = {
-  data: [
-    {
-      user_id: 1,
-      avg_overall_rm_sat_y1: 1,
-      avg_overall_rm_sat_y2: 1,
-      client_calls_y1: 1,
-      client_calls_y2: 1,
-      prospect_calls_y1: 1,
-      prospect_calls_y2: 1,
-      strat_uploaded_y1: 1,
-      strat_uploaded_y2: 1,
-    },
-  ],
+  data: '',
   clientId: 0,
   bgColor: 'black',
-  categories: ['Not Provided', 'Not Provided', 'Not Provided', 'Not Provided'],
   datasetOneLabel: 'Not Provided',
   datasetTwoLabel: 'Not Provided',
 }

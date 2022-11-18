@@ -1,31 +1,60 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react' // the AG Grid React Component
-
+import { convertNum, convertDate } from 'services/convertNum'
 import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
-import { OpportunitiesTable } from './NbosTable.stories'
 
-export const NbosTable = (
-  rdata,
-  columnNames,
-  rowNames,
-  chartHeight,
+import { useRef } from 'react'
+import { opportunitiesDetailsTable } from 'stories/data/opportunitiesDetailsTable'
+
+export const NbosTable = ({
+  data,
   resizable,
   columnWidth,
   rowHeight,
   headerHeight,
-) => {
-  const [rowData] = useState([...rdata.rdata])
+  shortenPipe,
+}) => {
+  let allRowsData
+  let columnNames
+  const formattedRows = []
+  if (data == 'opportunitiesDetailsTable') {
+    allRowsData = opportunitiesDetailsTable
+    columnNames = [
+      {
+        field: 'Relationship',
+      },
+      { field: 'ProductType' },
+      { field: 'SalesStage' },
+      { field: 'Revenue' },
+      { field: 'DateClosed' },
+    ]
+    allRowsData.map(item => {
+      let row = {
+        Relationship: `Relationship ${item.client_id}`,
+        ProductType: item.product_type,
+        SalesStage: item.sales_stage,
+        Revenue: `$ ${convertNum(item.revenue)}`,
+        DateClosed: convertDate(item.date_closed),
+      }
+      formattedRows.push(row)
+    })
+  } else {
+    columnNames = [{ field: 'Data Not Provided' }]
+    console.log('false')
+  }
 
-  const [columnDefs] = useState([...rdata.columnNames])
+  const gridRef = useRef()
 
-  const [rowDefs] = useState([...rdata.rowNames])
+  const [rowData] = useState([...formattedRows])
+
+  const [columnDefs] = useState([...columnNames])
 
   const gridOptions = {
     suppressMenuHide: true,
     defaultColDef: {
-      width: rdata.columnWidth,
+      width: columnWidth,
       filter: 'number',
       sortable: true,
       //resizable: rdata.resizable,
@@ -35,14 +64,14 @@ export const NbosTable = (
         justifyContent: 'center',
         backgroundColor: 'white',
       }),
-      suppressSizeToFit: true,
+      flex: 1,
     },
     enableCharts: true,
     animateRows: true,
     enableRangeSelection: false,
     rowDragManaged: true,
-    headerHeight: rdata.headerHeight,
-    rowHeight: rdata.rowHeight,
+    headerHeight: headerHeight,
+    rowHeight: rowHeight,
     rowGroupPanelShow: 'always',
     pivotPanelShow: 'always',
     pivotColumnGroupTotals: 'before',
@@ -69,15 +98,28 @@ export const NbosTable = (
     columnDefs,
     rowData,
     enableFillHandle: true,
+    paginationPageSize: 5,
+    pagination: shortenPipe,
+    suppressPaginationPanel: true,
   }
+
+  useEffect(() => {
+    console.log(gridOptions)
+  }, [shortenPipe])
 
   return (
     <div
       className="ag-theme-alpine ag-style"
-      style={{ height: window.innerHeight, width: '100%' }}
+      style={{
+        width: '100%',
+        '--ag-borders': 'none',
+        '--ag-borders-row': 'solid 1px',
+      }}
     >
       <AgGridReact
+        ref={gridRef}
         {...gridOptions}
+        domLayout={'autoHeight'}
         style={{
           padding: '10px',
           display: 'flex',
@@ -91,23 +133,19 @@ export const NbosTable = (
 // --ag-grid-size
 
 NbosTable.propTypes = {
-  rdata: PropTypes.array,
-  columnNames: PropTypes.array,
-  rowNames: PropTypes.array,
-  chartHeight: PropTypes.number,
+  rdata: PropTypes.oneOf(['opportunitiesDetailsTable', '']),
   resizable: PropTypes.bool,
   columnWidth: PropTypes.number,
   rowHeight: PropTypes.number,
   headerHeight: PropTypes.number,
+  shortenPipe: PropTypes.bool,
 }
 
 NbosTable.defaultProps = {
-  rdata: [{ 'Data Not Provided': 'Data Not Provided' }],
-  columnNames: [{ field: 'Data Not Provided' }],
-  rowNames: [{ field: 'Data Not Provided' }],
-  chartHeight: 1600,
+  rdata: '',
   resizable: false,
   columnWidth: 150,
   rowHeight: 50,
   headerHeight: 50,
+  shortenPipe: true,
 }

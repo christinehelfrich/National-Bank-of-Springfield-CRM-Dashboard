@@ -49,21 +49,6 @@ const Template = args => <NbosOpportunitiesTableTemplate {...args} />
 export const Primary = Template.bind({})
 Primary.args = {}
 
-export const TestOpportunitiesTable = Template.bind({})
-TestOpportunitiesTable.args = {
-  rdata: testData,
-  columnNames: [
-    {
-      field: 'Relationship',
-    },
-    { field: 'ProductType' },
-    { field: 'SalesStage' },
-    { field: 'Revenue' },
-    { field: 'DateClosed' },
-  ],
-  rowHeight: 80,
-}
-
 export const OpportunitiesTable = Template.bind({})
 OpportunitiesTable.args = {
   rdata: opportunitiesDetailsTable,
