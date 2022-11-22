@@ -1,7 +1,6 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit'
+import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import { action } from '@storybook/addon-actions'
 import TodoDataService from '../services/todos.service'
-import { createSelector } from '@reduxjs/toolkit'
 
 export const retrieveTodos = createAsyncThunk(
   'todos/retrieveTodos',
@@ -15,7 +14,7 @@ const initialState = {
   isError: false,
   isLoading: false,
   count: 0,
-  completedCount: 0,
+  // completedCount: 0,
   todos: [],
 }
 
@@ -29,7 +28,7 @@ export const todoSlice = createSlice({
       state.isError = false
       state.isLoading = false
       state.count = 0
-      state.completedCount = 0
+      // state.completedCount = 0
       state.todos = []
     },
   },
@@ -43,9 +42,9 @@ export const todoSlice = createSlice({
 
       .addCase(retrieveTodos.fulfilled, (state, action) => {
         state.count = action.payload.length
-        state.completedCount = action.payload.filter(
-          todo => todo.completed,
-        ).length
+        // state.completedCount = action.payload.filter(
+        // todo => todo.completed,
+        // ).length
         state.todos = action.payload
         state.isLoading = false
       })
@@ -58,5 +57,17 @@ export const todoSlice = createSlice({
 })
 
 export const { reset } = todoSlice.actions
+
+const selectTodos = state => state.todos.todos
+
+export const completedTodosSelector = createSelector([selectTodos], todos =>
+  todos.filter(todo => todo.completed),
+)
+
+export const completedTodosCountSelector = createSelector(
+  [selectTodos],
+  todos => todos.filter(todo => todo.completed).length,
+)
+
 const { reducer } = todoSlice
 export default reducer

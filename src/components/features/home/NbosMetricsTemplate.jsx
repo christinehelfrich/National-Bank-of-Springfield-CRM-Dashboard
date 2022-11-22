@@ -40,8 +40,8 @@ export const NbosMetricsTemplate = ({ clientId }) => {
       </Grid>
       <Grid item xs={1} sm={2} md={2} lg={2} xl={2}>
         <NbosBarchart
-          data="BehaviorMetricsTable"
-          clientId={1}
+          data="outcomeMetricsTable"
+          clientId={4}
           bgColor="#1B6AF8"
           datasetOneLabel="RM"
           datasetTwoLabel="This Time Last Year"

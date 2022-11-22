@@ -122,7 +122,7 @@ export const NbosBarchart = ({
     //   options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
     // }
   } else {
-    rowData = [{ NotProvided: 1, NotProvided: 1 }]
+    rowData = [{ NotProvided: 10, NotProvided: 10 }]
     categories = ['Not Provided', 'Not Provided']
   }
 

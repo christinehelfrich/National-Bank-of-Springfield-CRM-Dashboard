@@ -3,7 +3,12 @@ import PropTypes from 'prop-types'
 
 export const NbosAvatar = ({ variant, url, size }) => {
   return (
-    <Avatar src={url} variant={variant} sx={{ width: size, height: size }} />
+    <Avatar
+      src={url}
+      alt="avatar image"
+      variant={variant}
+      sx={{ width: size, height: size }}
+    />
   )
 }
 
