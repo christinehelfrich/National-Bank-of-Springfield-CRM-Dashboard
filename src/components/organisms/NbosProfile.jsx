@@ -27,6 +27,7 @@ export const NbosProfile = ({ userData }) => {
         margin: '1rem',
         textAlign: 'center',
         height: '95.5%',
+        width: '95%',
       }}
     >
       <Grid key={userData['id']} item xs={1} sm={1} md={1} lg={1} xl={1}>
@@ -39,7 +40,7 @@ export const NbosProfile = ({ userData }) => {
             url="https://m.media-amazon.com/images/I/41jLBhDISxL.jpg"
           />
           <div style={{ margin: '1rem' }}>
-            <NbosText size="sm" text={'Name'} color="grey" />
+            <NbosText size="sm" text="Name" color="grey" />
             <br />
             <NbosText
               size="lg"
@@ -47,17 +48,17 @@ export const NbosProfile = ({ userData }) => {
             />
           </div>
           <div style={{ margin: '1rem' }}>
-            <NbosText size="sm" text={'Hire Date'} color="grey" />
+            <NbosText size="sm" text="Hire Date" color="grey" />
             <br />
             <NbosText size="lg" text={userData['hire_date']} />
           </div>
           <div style={{ margin: '1rem' }}>
-            <NbosText size="sm" text={'Role'} color="grey" />
+            <NbosText size="sm" text="Role" color="grey" />
             <br />
             <NbosText size="lg" text={userData['role']} />
           </div>
           <div style={{ margin: '1rem' }}>
-            <NbosText size="sm" text={'Team Lead'} color="grey" />
+            <NbosText size="sm" text="Team Lead" color="grey" />
             <br />
             <NbosText
               size="lg"

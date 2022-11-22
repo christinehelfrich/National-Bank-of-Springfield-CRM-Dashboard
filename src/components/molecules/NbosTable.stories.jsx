@@ -13,7 +13,7 @@ Primary.args = {}
 
 export const OpportunitiesTable = Template.bind({})
 OpportunitiesTable.args = {
-  data: 'opportunitiesDetailsTable',
+  data: opportunitiesDetailsTable,
   rowHeight: 80,
-  shortenPipe: false,
+  isShortened: true,
 }

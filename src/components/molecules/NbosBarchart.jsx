@@ -24,6 +24,8 @@ const options = {
   },
   xAxis: {
     categories: [],
+    tickLength: 500,
+    endOnTick: false,
   },
   yAxis: {
     labels: {
@@ -41,7 +43,6 @@ const options = {
 
   plotOptions: {
     bar: {
-      colorByPoint: true,
       dataLabels: {
         enabled: true,
         formatter: function () {
@@ -57,11 +58,25 @@ const options = {
       name: 'NA',
       data: [],
       lineWidth: 5,
+      minPointLength: 100,
+      color: '#1B6AF8',
+      zoneAxis: 'y',
+      zones: [
+        {
+          value: 3,
+          color: 'red',
+        },
+        {
+          color: '#1B6AF8',
+        },
+      ],
     },
     {
       name: 'NA',
       data: [],
       lineWidth: 5,
+      minPointLength: 100,
+      color: 'lightgrey',
     },
   ],
   dataLabels: {
@@ -90,6 +105,7 @@ export const NbosBarchart = ({
       'Strategies Updated',
     ]
     if (rowData[clientId].prospect_calls_y1 <= 2) {
+      console.log('red')
       options.series[0].colors = [bgColor, bgColor, 'red', bgColor]
     }
   } else if (data == 'outcomeMetricsTable') {
@@ -100,9 +116,11 @@ export const NbosBarchart = ({
       'TM Growth',
       'New Clients',
     ]
-    if (rowData[clientId].new_clients_y1 <= 2) {
-      options.series[0].colors = [bgColor, bgColor, bgColor, 'red']
-    }
+    // if (rowData[clientId].new_clients_y1 <= 2) {
+    //   options.series[0].colors = [bgColor, bgColor, bgColor, 'red']
+    // } else {
+    //   options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
+    // }
   } else {
     rowData = [{ NotProvided: 1, NotProvided: 1 }]
     categories = ['Not Provided', 'Not Provided']
@@ -125,20 +143,11 @@ export const NbosBarchart = ({
   //options.title.text = `${users[clientId].tl_first_name} ${users[clientId].tl_last_name} VS This Time Last Year`
   options.title.text = ''
   options.xAxis.categories = categories
-  options.series[0].color = bgColor
+  // options.series[0].color = bgColor
   options.series[0].name = datasetOneLabel
   options.series[0].data = datasetOne
   options.series[1].name = datasetTwoLabel
   options.series[1].data = datasetTwo
-
-  options.series[1].colors = [
-    'lightgrey',
-    'lightgrey',
-    'lightgrey',
-    'lightgrey',
-  ]
-
-  options.series[0].colors = [bgColor, bgColor, bgColor, bgColor]
 
   return (
     <div>

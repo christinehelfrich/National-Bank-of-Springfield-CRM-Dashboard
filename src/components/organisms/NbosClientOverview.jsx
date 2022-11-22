@@ -26,7 +26,11 @@ export const NbosClientOverview = ({ pageData }) => {
       alignItems="center"
       spacing={{ xs: 0, md: 0 }}
       columns={{ xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }}
-      style={{ boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)', margin: '1rem' }}
+      style={{
+        boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
+        margin: '1rem',
+        width: '95%',
+      }}
     >
       {/* {results} */}
       <Grid gridRow="span 2" item xs={1} sm={1} md={1} lg={1} xl={1}>

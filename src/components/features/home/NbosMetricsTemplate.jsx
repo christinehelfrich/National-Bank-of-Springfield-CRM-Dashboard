@@ -9,7 +9,7 @@ import { users } from 'stories/data/testData-users'
 export const NbosMetricsTemplate = ({ clientId }) => {
   return (
     <Grid
-      direction={'row'}
+      direction="row"
       container
       spacing={{ xs: 3, md: 4 }}
       columns={{ xs: 1, sm: 2, md: 2, lg: 2, xl: 2 }}

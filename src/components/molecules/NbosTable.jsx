@@ -1,12 +1,11 @@
 import PropTypes from 'prop-types'
 import React, { useEffect, useState } from 'react'
 import { AgGridReact } from 'ag-grid-react' // the AG Grid React Component
-import { convertNum, convertDate } from 'services/convertNum'
+import { convertNum, convertDate, convertCurrency } from 'services/convertNum'
 import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 
 import { useRef } from 'react'
-import { opportunitiesDetailsTable } from 'stories/data/opportunitiesDetailsTable'
 
 export const NbosTable = ({
   data,
@@ -14,40 +13,25 @@ export const NbosTable = ({
   columnWidth,
   rowHeight,
   headerHeight,
-  shortenPipe,
+  isShortened,
 }) => {
-  let allRowsData
+  const [allRowData, setAllRowData] = useState(
+    isShortened ? data.slice(0, 5) : data,
+  )
   let columnNames
   const formattedRows = []
-  if (data == 'opportunitiesDetailsTable') {
-    allRowsData = opportunitiesDetailsTable
-    columnNames = [
-      {
-        field: 'Relationship',
-      },
-      { field: 'ProductType' },
-      { field: 'SalesStage' },
-      { field: 'Revenue' },
-      { field: 'DateClosed' },
-    ]
-    allRowsData.map(item => {
-      let row = {
-        Relationship: `Relationship ${item.client_id}`,
-        ProductType: item.product_type,
-        SalesStage: item.sales_stage,
-        Revenue: `$ ${convertNum(item.revenue)}`,
-        DateClosed: convertDate(item.date_closed),
-      }
-      formattedRows.push(row)
-    })
-  } else {
-    columnNames = [{ field: 'Data Not Provided' }]
-    console.log('false')
-  }
 
   const gridRef = useRef()
 
-  const [rowData] = useState([...formattedRows])
+  const [rowData, setRowData] = useState([...formattedRows])
+
+  columnNames = [
+    { field: 'Relationship' },
+    { field: 'ProductType' },
+    { field: 'SalesStage' },
+    { field: 'Revenue', valueFormatter: convertCurrency },
+    { field: 'DateClosed', valueFormatter: convertDate },
+  ]
 
   const [columnDefs] = useState([...columnNames])
 
@@ -66,16 +50,10 @@ export const NbosTable = ({
       }),
       flex: 1,
     },
-    enableCharts: true,
     animateRows: true,
     enableRangeSelection: false,
-    rowDragManaged: true,
     headerHeight: headerHeight,
     rowHeight: rowHeight,
-    rowGroupPanelShow: 'always',
-    pivotPanelShow: 'always',
-    pivotColumnGroupTotals: 'before',
-    pivotRowTotals: 'before',
     sideBar: {
       toolPanels: [
         {
@@ -98,14 +76,34 @@ export const NbosTable = ({
     columnDefs,
     rowData,
     enableFillHandle: true,
-    paginationPageSize: 5,
-    pagination: shortenPipe,
-    suppressPaginationPanel: true,
+    // paginationPageSize: 5,
+    // pagination: isShortened,
+    // suppressPaginationPanel: true,
   }
 
   useEffect(() => {
-    console.log(gridOptions)
-  }, [shortenPipe])
+    if (isShortened === true) {
+      setAllRowData(data.slice(0, 5))
+    }
+    if (isShortened === false) {
+      setAllRowData(data)
+    }
+  }, [isShortened])
+
+  useEffect(() => {
+    allRowData.map(item => {
+      let row = {
+        Relationship: `Relationship ${item.client_id}`,
+        ProductType: item.product_type,
+        SalesStage: item.sales_stage,
+        Revenue: item.revenue,
+        DateClosed: item.date_closed,
+      }
+      formattedRows.push(row)
+
+      setRowData([...formattedRows])
+    })
+  }, [allRowData])
 
   return (
     <div
@@ -133,19 +131,28 @@ export const NbosTable = ({
 // --ag-grid-size
 
 NbosTable.propTypes = {
-  rdata: PropTypes.oneOf(['opportunitiesDetailsTable', '']),
+  data: PropTypes.array,
   resizable: PropTypes.bool,
   columnWidth: PropTypes.number,
   rowHeight: PropTypes.number,
   headerHeight: PropTypes.number,
-  shortenPipe: PropTypes.bool,
+  isShortened: PropTypes.bool,
 }
 
 NbosTable.defaultProps = {
-  rdata: '',
+  data: [
+    {
+      client_id: 0,
+      client_name: 'No Data Provided',
+      product_type: 'No Data Provided',
+      sales_stage: 'No Data Provided',
+      revenue: 0,
+      date_closed: '2021-01-26T08:53:59Z',
+    },
+  ],
   resizable: false,
   columnWidth: 150,
   rowHeight: 50,
   headerHeight: 50,
-  shortenPipe: true,
+  isShortened: true,
 }

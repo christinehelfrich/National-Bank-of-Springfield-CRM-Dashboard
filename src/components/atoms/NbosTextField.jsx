@@ -39,7 +39,7 @@ NbosTextField.defaultProps = {
   label: 'No Label Provided',
   required: false,
   onChange: e => {
-    value = e
+    console.log(e)
   },
   fullWidth: false,
 }

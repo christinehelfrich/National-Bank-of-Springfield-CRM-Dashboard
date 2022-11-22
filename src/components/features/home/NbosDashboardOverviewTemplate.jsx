@@ -1,4 +1,4 @@
-import { Nbos1Summary } from 'components/organisms/Nbos1Summary'
+import { NbosSummary1 } from 'components/organisms/NbosSummary1'
 import { NbosClientOverview } from 'components/organisms/NbosClientOverview'
 import { NbosProfile } from 'components/organisms/NbosProfile'
 import { NbosSummary2 } from 'components/organisms/NbosSummary2'
@@ -7,12 +7,11 @@ import PropTypes from 'prop-types'
 import { client } from 'stories/data/testData-client'
 import { summary1, summary2 } from 'stories/data/testData-summary'
 import { user } from 'stories/data/testData-user'
-import { grid } from '@mui/system'
 
 export const NbosDashboardOverviewTemplate = () => {
   return (
     <Grid
-      direction={'row'}
+      direction="row"
       container
       spacing={{ xs: 2, md: 2 }}
       columns={{ xs: 1, sm: 3, md: 4, lg: 4, xl: 4 }}
@@ -25,7 +24,7 @@ export const NbosDashboardOverviewTemplate = () => {
       <Grid item xs={1} sm={2} md={3} lg={3} xl={3} sx={{ height: '100%' }}>
         <NbosClientOverview pageData={client} />
 
-        <Nbos1Summary pageData={summary1} />
+        <NbosSummary1 pageData={summary1} />
 
         <NbosSummary2 pageData={summary2} />
       </Grid>

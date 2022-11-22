@@ -1,14 +1,14 @@
 import PropTypes from 'prop-types'
-import React, { useState } from 'react'
+import React from 'react'
 import { AgGridReact } from 'ag-grid-react' // the AG Grid React Component
 import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 import { NbosText } from 'components/atoms/NbosText'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { convertNum, convertDate } from 'services/convertNum'
 import { NbosTable } from 'components/molecules/NbosTable'
-
+import { opportunitiesDetailsTable } from 'stories/data/opportunitiesDetailsTable'
 export const NbosOpportunitiesTableTemplate = (
   rdata,
   columnNames,
@@ -19,27 +19,11 @@ export const NbosOpportunitiesTableTemplate = (
   rowHeight,
   headerHeight,
 ) => {
-  const gridRef = useRef()
-
-  const [shortenPipe, setShortenPipe] = useState(true)
+  const [isShortened, setisShortened] = useState(true)
 
   const handleClick = e => {
-    //console.log(shortenPipe)
-    setShortenPipe(!shortenPipe)
-    //console.log(shortenPipe)
-    let value
-    if (shortenPipe == true) {
-      value = 5
-    } else {
-      value = 100
-    }
-
-    //gridRef.current.api.paginationSetPageSize(Number(value))
+    setisShortened(!isShortened)
   }
-
-  useEffect(() => {
-    console.log(shortenPipe)
-  }, [shortenPipe])
 
   return (
     <>
@@ -52,7 +36,7 @@ export const NbosOpportunitiesTableTemplate = (
       >
         <div
           style={{
-            borderBottom: shortenPipe ? 'solid 2px #1B6AF8' : '',
+            borderBottom: isShortened ? 'solid 2px #1B6AF8' : '',
             width: '10rem',
             padding: '.5rem',
             marginLeft: '1.2rem',
@@ -64,9 +48,9 @@ export const NbosOpportunitiesTableTemplate = (
         </div>
 
         <NbosTable
-          data="opportunitiesDetailsTable"
+          data={opportunitiesDetailsTable}
           rowHeight={80}
-          shortenPipe={shortenPipe}
+          isShortened={isShortened}
         />
         <div
           style={{
@@ -77,7 +61,7 @@ export const NbosOpportunitiesTableTemplate = (
         >
           <button onClick={handleClick}>
             <NbosText
-              text={shortenPipe ? 'Show Full Pipeline' : 'Shorten Pipeline'}
+              text={isShortened ? 'Show Full Pipeline' : 'Shorten Pipeline'}
               size="sm"
               color="#1B6AF8"
             />
