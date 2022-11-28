@@ -2,7 +2,7 @@ import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
 import { action } from '@storybook/addon-actions'
 import ProfileDataService from 'services/summaryDashboard.service'
 
-export const retrieveProfileData = createAsyncThunk(
+export const retrieveSummaryData = createAsyncThunk(
   'summary-dashboard/retrieveProfileData',
   async () => {
     const response = await ProfileDataService.getAll()
@@ -13,11 +13,11 @@ export const retrieveProfileData = createAsyncThunk(
 const initialState = {
   isError: false,
   isLoading: false,
-  profileData: [],
+  summaryData: [],
 }
 
-export const profileSlice = createSlice({
-  name: 'profileSlice',
+export const summarySlice = createSlice({
+  name: 'summarySlice',
 
   initialState,
 
@@ -25,25 +25,25 @@ export const profileSlice = createSlice({
     reset: state => {
       state.isError = false
       state.isLoading = false
-      state.profileData = []
+      state.summaryData = []
     },
   },
 
   extraReducers: builder => {
     builder
-      .addCase(retrieveProfileData.pending, state => {
+      .addCase(retrieveSummaryData.pending, state => {
         state.isLoading = true
         state.isError = false
         console.log(state)
       })
 
-      .addCase(retrieveProfileData.fulfilled, (state, action) => {
-        state.profileData = action.payload
+      .addCase(retrieveSummaryData.fulfilled, (state, action) => {
+        state.summaryData = action.payload
         state.isLoading = false
         console.log(state)
       })
 
-      .addCase(retrieveProfileData.rejected, state => {
+      .addCase(retrieveSummaryData.rejected, state => {
         state.isError = true
         state.isLoading = false
         console.log(state)
@@ -51,7 +51,7 @@ export const profileSlice = createSlice({
   },
 })
 
-export const { reset } = profileSlice.actions
+export const { reset } = summarySlice.actions
 
-const { reducer } = profileSlice
+const { reducer } = summarySlice
 export default reducer
