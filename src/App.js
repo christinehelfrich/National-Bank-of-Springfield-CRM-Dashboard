@@ -6,6 +6,7 @@ import { store } from './store'
 import { Provider } from 'react-redux'
 import './styles/index.css'
 import { Todos } from 'components/pages/todos'
+import { SummaryDashboard } from 'components/pages/summaryDashboard'
 
 const App = () => (
   <Provider store={store}>
@@ -15,6 +16,7 @@ const App = () => (
         <Route path="/edit" element={<EditPage />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/todos" element={<Todos />} />
+        <Route path="/summary-dashboard" element={<SummaryDashboard />} />
       </Routes>
     </BrowserRouter>
   </Provider>
