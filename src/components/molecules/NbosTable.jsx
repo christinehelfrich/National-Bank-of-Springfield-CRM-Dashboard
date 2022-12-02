@@ -1,11 +1,9 @@
 import PropTypes from 'prop-types'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 import { AgGridReact } from 'ag-grid-react' // the AG Grid React Component
-import { convertNum, convertDate, convertCurrency } from 'services/convertNum'
+import { convertNum, convertDate, convertCurrency } from 'utilities/convertNum'
 import 'ag-grid-community/styles/ag-grid.css' // Core grid CSS, always needed
 import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
-
-import { useRef } from 'react'
 
 export const NbosTable = ({
   data,
@@ -18,14 +16,18 @@ export const NbosTable = ({
   const [allRowData, setAllRowData] = useState(
     isShortened ? data.slice(0, 5) : data,
   )
-  let columnNames
+
+  useEffect(() => {
+    setAllRowData(isShortened ? data.slice(0, 5) : data)
+  }, [data])
+
   const formattedRows = []
 
   const gridRef = useRef()
 
   const [rowData, setRowData] = useState([...formattedRows])
 
-  columnNames = [
+  const columnNames = [
     { field: 'Relationship' },
     { field: 'ProductType' },
     { field: 'SalesStage' },
@@ -41,7 +43,7 @@ export const NbosTable = ({
       width: columnWidth,
       filter: 'number',
       sortable: true,
-      //resizable: rdata.resizable,
+      // resizable: rdata.resizable,
       cellStyle: () => ({
         display: 'flex',
         alignItems: 'center',
@@ -80,6 +82,96 @@ export const NbosTable = ({
     // pagination: isShortened,
     // suppressPaginationPanel: true,
   }
+  // const [gridOptions, setGridOptions] = useState({
+  //   suppressMenuHide: true,
+  //   defaultColDef: {
+  //     width: columnWidth,
+  //     filter: 'number',
+  //     sortable: true,
+  //     // resizable: rdata.resizable,
+  //     cellStyle: () => ({
+  //       display: 'flex',
+  //       alignItems: 'center',
+  //       justifyContent: 'center',
+  //       backgroundColor: 'white',
+  //     }),
+  //     flex: 1,
+  //   },
+  //   animateRows: true,
+  //   enableRangeSelection: false,
+  //   headerHeight: headerHeight,
+  //   rowHeight: rowHeight,
+  //   sideBar: {
+  //     toolPanels: [
+  //       {
+  //         id: 'columns',
+  //         labelDefault: 'Columns',
+  //         labelKey: 'columns',
+  //         iconKey: 'columns',
+  //         toolPanel: 'agColumnsToolPanel',
+  //       },
+  //       {
+  //         id: 'filters',
+  //         labelDefault: 'Filters',
+  //         labelKey: 'filters',
+  //         iconKey: 'filter',
+  //         toolPanel: 'agFiltersToolPanel',
+  //       },
+  //     ],
+  //     defaultToolPanel: 'filters',
+  //   },
+  //   columnDefs,
+  //   rowData,
+  //   enableFillHandle: true,
+  //   // paginationPageSize: 5,
+  //   // pagination: isShortened,
+  //   // suppressPaginationPanel: true,
+  // })
+
+  // const updateGridOptions = () => {
+  //   setGridOptions({
+  //     suppressMenuHide: true,
+  //     defaultColDef: {
+  //       width: columnWidth,
+  //       filter: 'number',
+  //       sortable: true,
+  //       // resizable: rdata.resizable,
+  //       cellStyle: () => ({
+  //         display: 'flex',
+  //         alignItems: 'center',
+  //         justifyContent: 'center',
+  //         backgroundColor: 'white',
+  //       }),
+  //       flex: 1,
+  //     },
+  //     animateRows: true,
+  //     enableRangeSelection: false,
+  //     headerHeight: headerHeight,
+  //     rowHeight: rowHeight,
+  //     sideBar: {
+  //       toolPanels: [
+  //         {
+  //           id: 'columns',
+  //           labelDefault: 'Columns',
+  //           labelKey: 'columns',
+  //           iconKey: 'columns',
+  //           toolPanel: 'agColumnsToolPanel',
+  //         },
+  //         {
+  //           id: 'filters',
+  //           labelDefault: 'Filters',
+  //           labelKey: 'filters',
+  //           iconKey: 'filter',
+  //           toolPanel: 'agFiltersToolPanel',
+  //         },
+  //       ],
+  //       defaultToolPanel: 'filters',
+  //     },
+  //     columnDefs,
+  //     rowData,
+  //     enableFillHandle: true,
+  //   })
+  // }
 
   useEffect(() => {
     if (isShortened === true) {
@@ -92,7 +184,7 @@ export const NbosTable = ({
 
   useEffect(() => {
     allRowData.map(item => {
-      let row = {
+      const row = {
         Relationship: `Relationship ${item.client_id}`,
         ProductType: item.product_type,
         SalesStage: item.sales_stage,
@@ -102,6 +194,7 @@ export const NbosTable = ({
       formattedRows.push(row)
 
       setRowData([...formattedRows])
+      return formattedRows
     })
   }, [allRowData])
 
@@ -117,14 +210,14 @@ export const NbosTable = ({
       <AgGridReact
         ref={gridRef}
         {...gridOptions}
-        domLayout={'autoHeight'}
+        domLayout="autoHeight"
         style={{
           padding: '10px',
           display: 'flex',
           justifyContent: 'center',
           alignItems: 'center',
         }}
-      ></AgGridReact>
+      />
     </div>
   )
 }

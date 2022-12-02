@@ -5,16 +5,16 @@ export const convertNum = params => {
     alteredNum = result2
     return alteredNum
   }
-  if (params >= 1000 && 1000000 > params) {
+  if (params >= 1000 && params < 1000000) {
     const result = params / 1000
     const result2 = result.toFixed(2)
-    alteredNum = result2 + ' K'
+    alteredNum = `${result2} K`
     return alteredNum
   }
   if (params >= 1000000) {
     const result = params / 1000000
     const result2 = result.toFixed(2)
-    alteredNum = result2 + ' M'
+    alteredNum = `${result2} M`
     return alteredNum
   }
 }
@@ -24,18 +24,18 @@ export const convertCurrency = params => {
   if (params.value < 1000) {
     const result2 = params.value.toFixed(2)
     alteredNum = result2
-    return '$ ' + alteredNum
+    return `$ ${alteredNum}`
   }
-  if (params.value >= 1000 && 1000000 > params.value) {
+  if (params.value >= 1000 && params.value < 1000000) {
     const result = params.value / 10000
     const result2 = result.toFixed(2)
-    alteredNum = '$ ' + result2 + 'K'
+    alteredNum = `$ ${result2} K`
     return alteredNum
   }
   if (params.value >= 1000000) {
-    let result = params.value / 1000000
-    let result2 = result.toFixed(2)
-    alteredNum = '$ ' + result2 + 'M'
+    const result = params.value / 1000000
+    const result2 = result.toFixed(2)
+    alteredNum = `$ ${result2} M`
     return alteredNum
   }
 }

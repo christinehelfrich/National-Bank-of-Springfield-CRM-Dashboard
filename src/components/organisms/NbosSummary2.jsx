@@ -38,7 +38,7 @@ export const NbosSummary2 = ({ pageData }) => {
           className="dbCard"
           bgColor="white"
           title="TTM Revenue"
-          count={pageData['ttm_revenue']}
+          count={pageData.ttm_revenue}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
@@ -46,7 +46,7 @@ export const NbosSummary2 = ({ pageData }) => {
           className="dbCard"
           bgColor="white"
           title="TTM Avg RAROC"
-          count={pageData['ttm_avg_raroc']}
+          count={pageData.ttm_avg_raroc}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
@@ -54,7 +54,7 @@ export const NbosSummary2 = ({ pageData }) => {
           className="dbCard"
           bgColor="white"
           title="Fee Equivalent + Card % of Loan Commit"
-          count={pageData['fee_equivalent_card_percent_load_commit']}
+          count={pageData.fee_equivalent_card_percent_load_commit}
         />
       </Grid>
     </Grid>

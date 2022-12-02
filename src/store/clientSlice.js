@@ -1,11 +1,10 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
-import { action } from '@storybook/addon-actions'
-import ProfileDataService from 'services/summaryDashboard.service'
+import ClientDataService from 'services/clientData.service'
 
 export const retrieveClientData = createAsyncThunk(
-  'summary-dashboard/retrieveProfileData',
+  'clientSlice/retrieveClientData',
   async () => {
-    const response = await ProfileDataService.getAll()
+    const response = await ClientDataService.getAll()
     return response.data
   },
 )
@@ -13,7 +12,8 @@ export const retrieveClientData = createAsyncThunk(
 const initialState = {
   isError: false,
   isLoading: false,
-  clientData: [],
+  clientData: {},
+  credit_only_relationships: 0,
 }
 
 export const clientSlice = createSlice({
@@ -34,19 +34,17 @@ export const clientSlice = createSlice({
       .addCase(retrieveClientData.pending, state => {
         state.isLoading = true
         state.isError = false
-        console.log(state)
       })
 
       .addCase(retrieveClientData.fulfilled, (state, action) => {
         state.clientData = action.payload
+
         state.isLoading = false
-        console.log(state)
       })
 
       .addCase(retrieveClientData.rejected, state => {
         state.isError = true
         state.isLoading = false
-        console.log(state)
       })
   },
 })

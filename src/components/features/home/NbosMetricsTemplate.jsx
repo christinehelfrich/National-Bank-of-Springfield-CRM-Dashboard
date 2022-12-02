@@ -3,8 +3,10 @@ import PropTypes from 'prop-types'
 import { NbosSelector } from 'components/molecules/NbosSelector'
 import { NbosBarchart } from 'components/molecules/NbosBarchart'
 import { NbosText } from 'components/atoms/NbosText'
-import { convertNum } from 'services/convertNum'
-import { BehaviorMetricsTable } from 'stories/data/behaviorMetricsTable'
+import { convertNum } from 'utilities/convertNum'
+import { BehaviorMetricsTable as behaviorMetricsTable } from 'stories/data/behaviorMetricsTable'
+import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
+
 import { users } from 'stories/data/testData-users'
 export const NbosMetricsTemplate = ({ clientId }) => {
   return (
@@ -40,7 +42,13 @@ export const NbosMetricsTemplate = ({ clientId }) => {
       </Grid>
       <Grid item xs={1} sm={2} md={2} lg={2} xl={2}>
         <NbosBarchart
-          data="outcomeMetricsTable"
+          data={outcomeMetricsTable}
+          categories={[
+            'Avg. Overall RM Satisfaction',
+            'Client Calls',
+            'Prospect Calls',
+            'Strategies Updated',
+          ]}
           clientId={4}
           bgColor="#1B6AF8"
           datasetOneLabel="RM"

@@ -2,7 +2,8 @@ import httpService from './http.service'
 
 class ProfileDataService {
   async getAll() {
-    return await httpService.get('http://jsonplaceholder.typicode.com/todos')
+    // check variable names
+    return await httpService.get('http://localhost:3004/user') // specify user here by id not index
   }
 }
 

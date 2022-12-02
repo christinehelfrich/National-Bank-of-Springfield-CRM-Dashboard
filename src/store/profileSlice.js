@@ -1,19 +1,22 @@
 import { createSlice, createAsyncThunk, createSelector } from '@reduxjs/toolkit'
-import { action } from '@storybook/addon-actions'
-import ProfileDataService from 'services/summaryDashboard.service'
+
+import ProfileDataService from 'services/profileData.service'
 
 export const retrieveProfileData = createAsyncThunk(
-  'summary-dashboard/retrieveProfileData',
+  // check this
+  'profileSlice/retrieveProfileData',
   async () => {
     const response = await ProfileDataService.getAll()
+
     return response.data
   },
 )
 
 const initialState = {
+  // define each variable inside object individually
   isError: false,
   isLoading: false,
-  profileData: [],
+  profileData: {},
 }
 
 export const profileSlice = createSlice({
@@ -34,19 +37,18 @@ export const profileSlice = createSlice({
       .addCase(retrieveProfileData.pending, state => {
         state.isLoading = true
         state.isError = false
-        console.log(state)
       })
 
       .addCase(retrieveProfileData.fulfilled, (state, action) => {
         state.profileData = action.payload
+
         state.isLoading = false
-        console.log(state)
+        // console.log(state.profileData)
       })
 
       .addCase(retrieveProfileData.rejected, state => {
         state.isError = true
         state.isLoading = false
-        console.log(state)
       })
   },
 })

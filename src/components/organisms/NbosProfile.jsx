@@ -30,7 +30,7 @@ export const NbosProfile = ({ userData }) => {
         width: '95%',
       }}
     >
-      <Grid key={userData['id']} item xs={1} sm={1} md={1} lg={1} xl={1}>
+      <Grid key={userData.id} item xs={1} sm={1} md={1} lg={1} xl={1}>
         <div
           style={{ alignItems: 'center', padding: '1rem' }}
           className="tw-grow tw-flex tw-flex-col tw-justify-center tw-items-left"
@@ -44,25 +44,25 @@ export const NbosProfile = ({ userData }) => {
             <br />
             <NbosText
               size="lg"
-              text={userData['first_name'] + ' ' + userData['last_name']}
+              text={`${userData.first_name} ${userData.last_name}`}
             />
           </div>
           <div style={{ margin: '1rem' }}>
             <NbosText size="sm" text="Hire Date" color="grey" />
             <br />
-            <NbosText size="lg" text={userData['hire_date']} />
+            <NbosText size="lg" text={userData.hire_date} />
           </div>
           <div style={{ margin: '1rem' }}>
             <NbosText size="sm" text="Role" color="grey" />
             <br />
-            <NbosText size="lg" text={userData['role']} />
+            <NbosText size="lg" text={userData.role} />
           </div>
           <div style={{ margin: '1rem' }}>
             <NbosText size="sm" text="Team Lead" color="grey" />
             <br />
             <NbosText
               size="lg"
-              text={userData['tl_first_name'] + ' ' + userData['tl_last_name']}
+              text={`${userData.tl_first_name} ${userData.tl_last_name}`}
             />
           </div>
         </div>

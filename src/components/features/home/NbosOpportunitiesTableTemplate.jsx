@@ -6,7 +6,7 @@ import 'ag-grid-community/styles/ag-theme-alpine.css' // Optional theme CSS
 import { NbosText } from 'components/atoms/NbosText'
 import { useEffect, useState } from 'react'
 import { useRef } from 'react'
-import { convertNum, convertDate } from 'services/convertNum'
+import { convertNum, convertDate } from 'utilities/convertNum'
 import { NbosTable } from 'components/molecules/NbosTable'
 import { opportunitiesDetailsTable } from 'stories/data/opportunitiesDetailsTable'
 export const NbosOpportunitiesTableTemplate = (

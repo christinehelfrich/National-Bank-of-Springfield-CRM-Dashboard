@@ -7,6 +7,9 @@ import { Provider } from 'react-redux'
 import './styles/index.css'
 import { Todos } from 'components/pages/todos'
 import { SummaryDashboard } from 'components/pages/summaryDashboard'
+import { MetricsSummary } from 'components/pages/metricsSummary'
+import { OpportunitiesSummary } from 'components/pages/opportunitiesSummary'
+import { OpportunitiesDetails } from 'components/pages/opportunitiesDetails'
 
 const App = () => (
   <Provider store={store}>
@@ -17,6 +20,15 @@ const App = () => (
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/todos" element={<Todos />} />
         <Route path="/summary-dashboard" element={<SummaryDashboard />} />
+        <Route path="/metrics-summary" element={<MetricsSummary />} />
+        <Route
+          path="/opportunities-summary"
+          element={<OpportunitiesSummary />}
+        />
+        <Route
+          path="/opportunities-details"
+          element={<OpportunitiesDetails />}
+        />
       </Routes>
     </BrowserRouter>
   </Provider>

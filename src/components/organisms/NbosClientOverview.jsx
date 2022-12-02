@@ -10,7 +10,7 @@ export const NbosClientOverview = ({ pageData }) => {
       <Grid key={key} item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
+          bgColor="white"
           title={key}
           count={pageData[key]}
         />
@@ -36,41 +36,41 @@ export const NbosClientOverview = ({ pageData }) => {
       <Grid gridRow="span 2" item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'TOTAL RELATIONSHIPS'}
-          count={pageData['total_relationships']}
+          bgColor="white"
+          title="TOTAL RELATIONSHIPS"
+          count={pageData.total_relationships}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'Credit Only Relationships'}
-          count={pageData['credit_only_relationships']}
+          bgColor="white"
+          title="Credit Only Relationships"
+          count={pageData.credit_only_relationships}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'Relationships with <$25k TTM Revenue'}
-          count={pageData['relationships_low_revenue']}
+          bgColor="white"
+          title="Relationships with <$25k TTM Revenue"
+          count={pageData.relationships_low_revenue}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'Top Prospects'}
-          count={pageData['top_prospects']}
+          bgColor="white"
+          title="Top Prospects"
+          count={pageData.top_prospects}
         />
       </Grid>
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"
-          bgColor={'white'}
-          title={'Suspects'}
-          count={pageData['suspects']}
+          bgColor="white"
+          title="Suspects"
+          count={pageData.suspects}
         />
       </Grid>
     </Grid>

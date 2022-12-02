@@ -6,7 +6,9 @@ import { OpportunitiesSummaryTable } from '../../../stories/data/opportunitiesSu
 export const NbosOpportunitiesSummaryTemplate = () => {
   return (
     <NbosColumnChart
-      data="OpportunitiesSummaryTable"
+      data={OpportunitiesSummaryTable}
+      categories={['Stage 1', 'Stage 2', 'Stage 3', 'Stage 4', 'Booked YTD']}
+      yTitle="Revenue"
       bgColor="#1B6AF8"
       title="Current VS Same Time Last Year"
       datasetOneLabel="2021"
