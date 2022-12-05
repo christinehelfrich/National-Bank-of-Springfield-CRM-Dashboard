@@ -9,34 +9,66 @@ import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
 
 import { users } from 'stories/data/testData-users'
 import { retrieveOutcomeMetricsData } from '@/store/outcomeMetricsSlice'
+import { retrieveBehaviorMetricsData } from 'store/behaviorMetricsSlice'
 
 import Grid from '@mui/material/Grid'
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useRef } from 'react'
 
 export function MetricsSummary() {
   const dispatch = useDispatchHook()
-  const outcomeMetricsData = useAppSelector(state => state.outcomMetricsData)
+  const outcomeMetricsData = useAppSelector(
+    state => state.outcomeMetricsData.outcomeMetricsData,
+  )
+  const behaviorMetricsData = useAppSelector(
+    state => state.behaviorMetricsData.behaviorMetricsData,
+  )
+  const [dataDisplayed, setDataDisplayed] = useState('Outcome Metrics')
+  const [data, setData] = useState(outcomeMetricsData)
+  const [categories, setCategories] = useState([
+    'Loan Production',
+    'Deposit Growth',
+    'TM Growth',
+    'New Clients',
+  ])
 
   const clientId = 1
 
   useEffect(() => {
     async function fetchdata() {
       await dispatch(retrieveOutcomeMetricsData())
+      await dispatch(retrieveBehaviorMetricsData())
     }
     fetchdata()
-    // ([])
   }, [])
 
-  console.log(outcomeMetricsData.outcomeMetricsData)
+  const handleClick = alignment => {
+    setDataDisplayed(alignment)
+  }
+
+  useEffect(() => {
+    if (dataDisplayed === 'Outcome Metrics') {
+      setData(outcomeMetricsData)
+      setCategories([
+        'Loan Production',
+        'Deposit Growth',
+        'TM Growth',
+        'New Clients',
+      ])
+    } else if (dataDisplayed === 'Behavior Metrics') {
+      setData(behaviorMetricsData)
+      setCategories([
+        'Avg. Overall RM Satisfaction',
+        'Client Calls',
+        'Prospect Calls',
+        'Strategies Updated',
+      ])
+    }
+  }, [dataDisplayed, outcomeMetricsData])
 
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>Metrics Summary</h1>
-      </header>
-
+    <div className="App boundry">
       <div className="App-line">
-        <section className="App-main">
+        <section className="App-Main">
           <Grid
             direction="row"
             container
@@ -62,20 +94,13 @@ export function MetricsSummary() {
               <NbosSelector
                 bgColor="#1B6AF8"
                 labels={['Outcome Metrics', 'Behavior Metrics']}
-                onChange={alignment => {
-                  console.log(alignment)
-                }}
+                onChange={alignment => handleClick(alignment)}
               />
             </Grid>
             <Grid item xs={1} sm={2} md={2} lg={2} xl={2}>
               <NbosBarchart
-                data={outcomeMetricsData.outcomeMetricsData}
-                categories={[
-                  'Loan Production',
-                  'Deposit Growth',
-                  'TM Growth',
-                  'New Clients',
-                ]}
+                data={data}
+                categories={categories}
                 clientId={1}
                 bgColor="#1B6AF8"
                 datasetOneLabel="RM"

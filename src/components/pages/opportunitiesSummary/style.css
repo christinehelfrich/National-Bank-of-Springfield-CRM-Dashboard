@@ -14,3 +14,7 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
+
+div.selector {
+  margin-bottom: 3rem;
+}

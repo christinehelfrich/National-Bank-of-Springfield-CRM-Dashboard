@@ -3,67 +3,52 @@ import { Counter } from '../../features/counter/Counter'
 import { NbosHighcharts } from '../../molecules/NbosHighcharts'
 import './style.css'
 import { Link } from 'react-router-dom'
+import AppBar from '@mui/material/AppBar'
+import Box from '@mui/material/Box'
+import Toolbar from '@mui/material/Toolbar'
+import Typography from '@mui/material/Typography'
+import Button from '@mui/material/Button'
+import IconButton from '@mui/material/IconButton'
+import MenuIcon from '@mui/icons-material/Menu'
+import { SummaryDashboard } from '../summaryDashboard'
+import { MetricsSummary } from '../metricsSummary'
+import { OpportunitiesSummary } from '../opportunitiesSummary'
+import { OpportunitiesDetails } from '../opportunitiesDetails'
 
 export function HomePage() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <Counter />
-        <p>
-          Edit <code>src/components/features/Home/index.js</code> and save to
-          reload.
-        </p>
-        <span>
-          <span className="tw-font-bold">Learn </span>
-          <a
-            className="App-link"
-            href="https://reactjs.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux
-          </a>
-          <span>, </span>
-          <a
-            className="App-link"
-            href="https://redux-toolkit.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Redux Toolkit
-          </a>
-          ,<span> and </span>
-          <a
-            className="App-link"
-            href="https://react-redux.js.org/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            React Redux
-          </a>
-        </span>
-      </header>
-      <section>
-        <div>
-          <Link to="/edit" className="App-link">
-            Edit Page
-          </Link>
-          <Link to="/dashboard" className="App-link tw-ml-4">
-            Dashboard Page
-          </Link>
+    <>
+      <Box sx={{ flexGrow: 1 }}>
+        <AppBar position="static">
+          <Toolbar>
+            <IconButton
+              size="large"
+              edge="start"
+              color="inherit"
+              aria-label="menu"
+              sx={{ mr: 2 }}
+            >
+              <MenuIcon />
+            </IconButton>
+            <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
+              National Bank of Springfield
+            </Typography>
+          </Toolbar>
+        </AppBar>
+      </Box>
+      <main className="tw-mt-8">
+        <div className="tw-flex tw-px-[20px]">
+          <aside className="tw-min-w-[5%]">
+            <div className="tw-bg-slate-200 tw-h-screen" />
+          </aside>
+          <section className="tw-grow">
+            <SummaryDashboard />
+            <MetricsSummary />
+            <OpportunitiesSummary />
+            <OpportunitiesDetails />
+          </section>
         </div>
-        <NbosHighcharts />
-      </section>
-    </div>
+      </main>
+    </>
   )
 }

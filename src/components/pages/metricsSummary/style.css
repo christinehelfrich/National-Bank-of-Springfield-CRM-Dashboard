@@ -14,3 +14,14 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
+
+section.App-main {
+  margin-top: 2rem;
+}
+
+section.App-Main {
+  margin: 2rem;
+  padding: 2rem;
+  margin-top: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}

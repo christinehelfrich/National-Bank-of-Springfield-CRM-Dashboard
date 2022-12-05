@@ -32,51 +32,48 @@ export function OpportunitiesDetails() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Opportunities Details</h1>
-      </header>
-
       <div className="App-line">
         <div
           className="ag-theme-alpine ag-style"
           style={{
-            margin: '2rem',
-            width: '95%',
+            width: '100%',
           }}
         >
-          <div
-            style={{
-              borderBottom: isShortened ? 'solid 2px #1B6AF8' : '',
-              width: '10rem',
-              padding: '.5rem',
-              marginLeft: '1.2rem',
-            }}
-          >
-            <button onClick={handleClick}>
-              <NbosText text="Top 5 Opportunities" size="sm" bold />
-            </button>
-          </div>
+          <section className="App-Main">
+            <div
+              style={{
+                borderBottom: isShortened ? 'solid 2px #1B6AF8' : '',
+                width: '10rem',
+                padding: '.5rem',
+                marginLeft: '1.2rem',
+              }}
+            >
+              <button onClick={handleClick}>
+                <NbosText text="Top 5 Opportunities" size="sm" bold />
+              </button>
+            </div>
 
-          <NbosTable
-            data={opportunitiesDetailsData.opportunitiesDetailsData}
-            rowHeight={80}
-            isShortened={isShortened}
-          />
-          <div
-            style={{
-              textAlign: 'center',
-              padding: '2rem',
-              borderBottom: 'solid .5px #D3D3D3',
-            }}
-          >
-            <button onClick={handleClick}>
-              <NbosText
-                text={isShortened ? 'Show Full Pipeline' : 'Shorten Pipeline'}
-                size="sm"
-                color="#1B6AF8"
-              />
-            </button>
-          </div>
+            <NbosTable
+              data={opportunitiesDetailsData.opportunitiesDetailsData}
+              rowHeight={80}
+              isShortened={isShortened}
+            />
+            <div
+              style={{
+                textAlign: 'center',
+                padding: '2rem',
+                borderBottom: 'solid .5px #D3D3D3',
+              }}
+            >
+              <button onClick={handleClick}>
+                <NbosText
+                  text={isShortened ? 'Show Full Pipeline' : 'Shorten Pipeline'}
+                  size="sm"
+                  color="#1B6AF8"
+                />
+              </button>
+            </div>
+          </section>
         </div>
       </div>
     </div>

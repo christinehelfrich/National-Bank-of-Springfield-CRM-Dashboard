@@ -14,3 +14,8 @@
 .App-link {
   color: rgb(112, 76, 182);
 }
+
+section.App-main {
+  padding: 2rem;
+  padding-top: 1rem;
+}

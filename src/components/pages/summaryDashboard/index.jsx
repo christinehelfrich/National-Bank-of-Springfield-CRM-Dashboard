@@ -35,10 +35,6 @@ export function SummaryDashboard() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Summary Dashboard</h1>
-      </header>
-
       <div className="App-line">
         <section className="App-main">
           <Grid

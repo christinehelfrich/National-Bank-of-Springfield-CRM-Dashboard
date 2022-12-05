@@ -3,6 +3,7 @@ import './style.css'
 import { useAppSelector, useDispatchHook } from '@/hooks/useReduxHooks'
 
 import { NbosColumnChart } from 'components/molecules/NbosColumnChart'
+import { NbosSelector } from 'components/molecules/NbosSelector'
 
 import { retrieveOpportunitiesSummaryData } from 'store/opportunitiesSummarySlice'
 import { OpportunitiesSummaryTable } from 'stories/data/opportunitiesSummaryTable'
@@ -25,12 +26,8 @@ export function OpportunitiesSummary() {
 
   return (
     <div className="App">
-      <header className="App-header">
-        <h1>Opportunities Summary</h1>
-      </header>
-
       <div className="App-line">
-        <section className="App-main">
+        <section className="App-Main">
           <NbosColumnChart
             data={opportunitiesSummaryData.opportunitiesSummaryData}
             categories={[

@@ -1,7 +1,7 @@
 export const convertNum = params => {
   let alteredNum
   if (params < 1000) {
-    const result2 = params.toFixed(2)
+    const result2 = params
     alteredNum = result2
     return alteredNum
   }
@@ -22,7 +22,7 @@ export const convertNum = params => {
 export const convertCurrency = params => {
   let alteredNum
   if (params.value < 1000) {
-    const result2 = params.value.toFixed(2)
+    const result2 = params.value
     alteredNum = result2
     return `$ ${alteredNum}`
   }

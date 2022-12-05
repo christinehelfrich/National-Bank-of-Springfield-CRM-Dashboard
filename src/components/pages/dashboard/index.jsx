@@ -32,7 +32,7 @@ export function DashboardPage() {
       </Box>
       <main className="tw-mt-8">
         <div className="tw-flex tw-px-[50px]">
-          <aside className="tw-min-w-[20%] tw-mr-12">
+          <aside className="tw-min-w-[5%] tw-mr-12">
             <div className="tw-bg-slate-200 tw-h-screen" />
           </aside>
           <section className="tw-grow">

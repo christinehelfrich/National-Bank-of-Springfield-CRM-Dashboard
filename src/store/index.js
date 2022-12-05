@@ -8,6 +8,7 @@ import summary2Reducer from './summary2Slice'
 import outcomeMetricsReducer from './outcomeMetricsSlice'
 import opportunitiesSummaryReducer from './opportunitiesSummarySlice'
 import opportunitiesDetailsReducer from './opportunitiesDetailsSlice'
+import behaviorMetricsReducer from './behaviorMetricsSlice'
 
 const reducers = {
   counter: counterReducer,
@@ -16,7 +17,8 @@ const reducers = {
   clientData: clientReducer,
   summary1Data: summary1Reducer,
   summary2Data: summary2Reducer,
-  outcomMetricsData: outcomeMetricsReducer,
+  outcomeMetricsData: outcomeMetricsReducer,
+  behaviorMetricsData: behaviorMetricsReducer,
   opportunitiesSummaryData: opportunitiesSummaryReducer,
   opportunitiesDetailsData: opportunitiesDetailsReducer,
 }

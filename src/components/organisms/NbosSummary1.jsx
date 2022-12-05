@@ -28,8 +28,8 @@ export const NbosSummary1 = ({ pageData }) => {
       columns={{ xs: 3, sm: 3, md: 3, lg: 3, xl: 3 }}
       style={{
         boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
-        margin: '1rem',
-        width: '95%',
+        marginBottom: '1rem',
+        width: '100%',
       }}
     >
       {/* {results} */}

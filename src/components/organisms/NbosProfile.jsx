@@ -24,10 +24,9 @@ export const NbosProfile = ({ userData }) => {
       columns={{ xs: 1, sm: 1, md: 1, lg: 1, xl: 1 }}
       style={{
         boxShadow: '0 3px 10px rgb(0 0 0 / 0.2)',
-        margin: '1rem',
         textAlign: 'center',
-        height: '95.5%',
-        width: '95%',
+        height: '100%',
+        width: '100%',
       }}
     >
       <Grid key={userData.id} item xs={1} sm={1} md={1} lg={1} xl={1}>
