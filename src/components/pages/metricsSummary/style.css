@@ -15,13 +15,16 @@
   color: rgb(112, 76, 182);
 }
 
-section.App-main {
-  margin-top: 2rem;
+section.App-Main {
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+  padding: 1rem;
 }
 
-section.App-Main {
-  margin: 2rem;
-  padding: 2rem;
-  margin-top: 1rem;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+section {
+  margin: 1rem;
+  margin-bottom: 2rem;
+}
+
+section.App-main {
+  margin-bottom: 4rem;
 }

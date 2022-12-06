@@ -43,7 +43,7 @@ export function HomePage() {
           </aside>
           <section className="tw-grow">
             <SummaryDashboard />
-            <MetricsSummary />
+            <MetricsSummary className="metrics" />
             <OpportunitiesSummary />
             <OpportunitiesDetails />
           </section>
