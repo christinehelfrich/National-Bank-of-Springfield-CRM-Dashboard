@@ -3,11 +3,14 @@
 }
 
 section {
-  width: 86vw;
+  width: 85vw;
 }
 
 @media screen and (max-width: 600px) {
   body {
     width: 36vw;
+  }
+  aside {
+    display: none;
   }
 }

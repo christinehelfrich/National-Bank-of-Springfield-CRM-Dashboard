@@ -37,7 +37,7 @@ export function HomePage() {
         </AppBar>
       </Box>
       <main className="tw-mt-8">
-        <div className="tw-flex tw-px-[20px]">
+        <div className="tw-flex tw-px-[10px]">
           <aside className="tw-min-w-[5%]">
             <div className="tw-bg-slate-200 tw-h-screen" />
           </aside>

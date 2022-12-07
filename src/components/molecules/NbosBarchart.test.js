@@ -1,13 +1,13 @@
-import React, { Component } from 'react'
+import React, { Component, useState } from 'react'
 import Enzyme, { shallow } from 'enzyme'
 import Adapter from 'enzyme-adapter-react-16'
 import { NbosBarchart } from './NbosBarchart'
 import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
 import Highcharts, { chart } from 'highcharts'
 import HighchartsReact from 'highcharts-react-official'
-import { render } from '@testing-library/react'
+import { render, screen } from '@testing-library/react'
 Enzyme.configure({ adapter: new Adapter() })
-const options = {
+const exampleoptions = {
   chart: {
     type: 'bar',
     style: {
@@ -82,6 +82,31 @@ const options = {
     color: '#FFFFFF',
   },
 }
+
+const BarchartWrapper = props => {
+  const [options, setOptions] = useState(exampleoptions)
+
+  return (
+    <NbosBarchart
+      data={outcomeMetricsTable}
+      categories={[
+        'Avg. Overall RM Satisfaction',
+        'Client Calls',
+        'Prospect Calls',
+        'Strategies Updated',
+      ]}
+      clientId={4}
+      bgColor="#1B6AF8"
+      datasetOneLabel="RM"
+      datasetTwoLabel="This Time Last Year"
+    />
+  )
+}
+
+const renderBarchart = props => {
+  return render(<BarchartWrapper {...props} />)
+}
+
 describe('NbosBarchart', () => {
   it('should render the HighCharts element', () => {
     const wrapper = shallow(
@@ -107,13 +132,13 @@ describe('NbosBarchart', () => {
         <HighchartsReact
           classsName="highcharts"
           highcharts={Highcharts}
-          options={options}
+          options={exampleoptions}
         />,
       ),
     )
   })
 
-  it('should do something with the chart', () => {
+  it('chart should be defined', () => {
     const { container } = render(
       <NbosBarchart
         data={outcomeMetricsTable}
@@ -133,23 +158,12 @@ describe('NbosBarchart', () => {
     expect(container).toBeDefined()
   })
 
-  it('should check things in container', () => {
-    const { container } = render(
-      <NbosBarchart
-        data={outcomeMetricsTable}
-        categories={[
-          'Avg. Overall RM Satisfaction',
-          'Client Calls',
-          'Prospect Calls',
-          'Strategies Updated',
-        ]}
-        clientId={4}
-        bgColor="#1B6AF8"
-        datasetOneLabel="RM"
-        datasetTwoLabel="This Time Last Year"
-      />,
-    )
+  it('categories should show up', () => {
+    const wrapper = renderBarchart()
 
-    expect(container).toBe('strong')
+    screen.getByText('Avg. Overall RM Satisfaction')
+    screen.getByText('Client Calls')
+    screen.getByText('Prospect Calls')
+    screen.getByText('Strategies Updated')
   })
 })
