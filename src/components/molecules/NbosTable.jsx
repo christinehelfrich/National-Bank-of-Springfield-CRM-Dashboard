@@ -41,7 +41,7 @@ export const NbosTable = ({
     suppressMenuHide: true,
     defaultColDef: {
       width: columnWidth,
-      filter: 'number',
+      filter: 'true',
       sortable: true,
       // resizable: rdata.resizable,
       cellStyle: () => ({
@@ -53,7 +53,7 @@ export const NbosTable = ({
       flex: 1,
     },
     animateRows: true,
-    enableRangeSelection: false,
+
     headerHeight: headerHeight,
     rowHeight: rowHeight,
     sideBar: {

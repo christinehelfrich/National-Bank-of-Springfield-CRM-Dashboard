@@ -1,15 +1,9 @@
 import React, { useState } from 'react'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 import { render, screen, fireEvent, getByText } from '@testing-library/react'
 
 import { NbosSelector } from './NbosSelector'
 
-Enzyme.configure({ adapter: new Adapter() })
-
 const SelectorWrapper = props => {
-  const [alignment, setAlignment] = React.useState('Outcome Metrics')
-
   return (
     <NbosSelector
       bgColor="#1B6AF8"
@@ -33,16 +27,18 @@ describe('NbosSelector', () => {
   })
 
   it('the button should work', () => {
-    const { container } = render(
+    const handleClick = jest.fn()
+    render(
       <NbosSelector
         bgColor="#1B6AF8"
         labels={['Outcome Metrics', 'Behavior Metrics']}
-        onChange={alignment => {}}
+        onChange={handleClick}
       />,
     )
 
-    const ToggleButton = container.querySelector('.MuiToggleButtonGroup-root')
+    const ToggleButton = screen.getByText('Outcome Metrics')
 
     fireEvent.click(ToggleButton)
+    expect(handleClick).toHaveBeenCalledTimes(2)
   })
 })

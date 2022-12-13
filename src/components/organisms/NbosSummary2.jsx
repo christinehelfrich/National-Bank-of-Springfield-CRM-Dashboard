@@ -3,20 +3,6 @@ import { NbosPage } from '../molecules/NbosPage'
 import Grid from '@mui/material/Grid'
 
 export const NbosSummary2 = ({ pageData }) => {
-  const results = []
-
-  Object.keys(pageData).forEach(key => {
-    results.push(
-      <Grid key={key} item xs={1} sm={1} md={1} lg={1} xl={1}>
-        <NbosPage
-          className="dbCard"
-          bgColor="white"
-          title={key}
-          count={pageData[key]}
-        />
-      </Grid>,
-    )
-  })
   return (
     <Grid
       item
@@ -32,7 +18,6 @@ export const NbosSummary2 = ({ pageData }) => {
         width: '100%',
       }}
     >
-      {/* {results} */}
       <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
         <NbosPage
           className="dbCard"

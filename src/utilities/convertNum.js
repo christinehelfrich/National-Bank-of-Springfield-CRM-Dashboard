@@ -45,3 +45,13 @@ export const convertDate = params => {
   var dt = new Date(params.value.replace(pattern, '$3-$2-$1'))
   return dt.toLocaleDateString()
 }
+
+export const convertDateInParams = params => {
+  if (params === undefined) {
+    return ' '
+  } else {
+    var pattern = /(\d{4})\.(\d{2})\.(\d{2})/
+    var dt = new Date(params.replace(pattern, '$3-$2-$1'))
+    return dt.toLocaleDateString()
+  }
+}

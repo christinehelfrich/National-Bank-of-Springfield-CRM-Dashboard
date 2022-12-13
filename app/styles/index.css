@@ -577,10 +577,6 @@ code {
   margin-right: 3rem;
 }
 
-.tw-ml-4 {
-  margin-left: 1rem;
-}
-
 .tw-flex {
   display: flex;
 }
@@ -613,8 +609,8 @@ code {
   min-width: 33%;
 }
 
-.tw-min-w-\[20\%\] {
-  min-width: 20%;
+.tw-min-w-\[5\%\] {
+  min-width: 5%;
 }
 
 .tw-grow {
@@ -641,6 +637,11 @@ code {
 .tw-px-\[50px\] {
   padding-left: 50px;
   padding-right: 50px;
+}
+
+.tw-px-\[10px\] {
+  padding-left: 10px;
+  padding-right: 10px;
 }
 
 .tw-text-xs {

@@ -1,99 +1,18 @@
 import React, { Component, useState } from 'react'
-import Enzyme, { shallow } from 'enzyme'
-import Adapter from 'enzyme-adapter-react-16'
 import { NbosBarchart } from './NbosBarchart'
 import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
-import Highcharts, { chart } from 'highcharts'
-import HighchartsReact from 'highcharts-react-official'
 import { render, screen } from '@testing-library/react'
-Enzyme.configure({ adapter: new Adapter() })
-const exampleoptions = {
-  chart: {
-    type: 'bar',
-    style: {
-      fontFamily: '',
-    },
-  },
-  legend: {
-    align: 'left',
-  },
-  title: {
-    text: 'NA',
-    align: 'left',
-  },
-  xAxis: {
-    categories: [],
-    tickLength: 500,
-    endOnTick: false,
-  },
-  yAxis: {
-    labels: {
-      enabled: false,
-    },
-    visible: false,
-    tickLength: 0,
-    minorGridLineWidth: 0,
-  },
-  tooltip: {
-    formatter: function () {
-      return convertNum(this.y)
-    },
-  },
-
-  plotOptions: {
-    bar: {
-      dataLabels: {
-        enabled: true,
-        formatter: function () {
-          return convertNum(this.y)
-        },
-      },
-      borderRadius: 10,
-      borderWidth: 10,
-    },
-  },
-  series: [
-    {
-      name: 'NA',
-      data: [],
-      lineWidth: 5,
-      minPointLength: 100,
-      color: '#1B6AF8',
-      zoneAxis: 'y',
-      zones: [
-        {
-          value: 3,
-          color: 'red',
-        },
-        {
-          color: '#1B6AF8',
-        },
-      ],
-    },
-    {
-      name: 'NA',
-      data: [],
-      lineWidth: 5,
-      minPointLength: 100,
-      color: 'lightgrey',
-    },
-  ],
-  dataLabels: {
-    color: '#FFFFFF',
-  },
-}
+import { convertNum } from 'utilities/convertNum'
 
 const BarchartWrapper = props => {
-  const [options, setOptions] = useState(exampleoptions)
-
   return (
     <NbosBarchart
       data={outcomeMetricsTable}
       categories={[
-        'Avg. Overall RM Satisfaction',
-        'Client Calls',
-        'Prospect Calls',
-        'Strategies Updated',
+        'Loan Production',
+        'Deposit Growth',
+        'TM Growth',
+        'New Clients',
       ]}
       clientId={4}
       bgColor="#1B6AF8"
@@ -102,68 +21,45 @@ const BarchartWrapper = props => {
     />
   )
 }
-
 const renderBarchart = props => {
   return render(<BarchartWrapper {...props} />)
 }
 
 describe('NbosBarchart', () => {
-  it('should render the HighCharts element', () => {
-    const wrapper = shallow(
-      <NbosBarchart
-        data={outcomeMetricsTable}
-        categories={[
-          'Avg. Overall RM Satisfaction',
-          'Client Calls',
-          'Prospect Calls',
-          'Strategies Updated',
-        ]}
-        clientId={4}
-        bgColor="#1B6AF8"
-        datasetOneLabel="RM"
-        datasetTwoLabel="This Time Last Year"
-      />,
-    )
+  it('categories should be correct', () => {
+    renderBarchart()
 
-    // const highchartsElement = wrapper.find('.highcharts')
-
-    expect(
-      wrapper.contains(
-        <HighchartsReact
-          classsName="highcharts"
-          highcharts={Highcharts}
-          options={exampleoptions}
-        />,
-      ),
-    )
+    screen.getByText('Loan Production')
+    screen.getByText('Deposit Growth')
+    screen.getByText('TM Growth')
+    screen.getByText('New Clients')
   })
 
-  it('chart should be defined', () => {
-    const { container } = render(
-      <NbosBarchart
-        data={outcomeMetricsTable}
-        categories={[
-          'Avg. Overall RM Satisfaction',
-          'Client Calls',
-          'Prospect Calls',
-          'Strategies Updated',
-        ]}
-        clientId={4}
-        bgColor="#1B6AF8"
-        datasetOneLabel="RM"
-        datasetTwoLabel="This Time Last Year"
-      />,
-    )
+  it('should display data in the right format', () => {
+    renderBarchart()
 
-    expect(container).toBeDefined()
+    // const loan_prod_y1 = screen.getByText(
+    //   outcomeMetricsTable[1].loan_prod_y1,
+    // ).textContent
   })
 
-  it('categories should show up', () => {
-    const wrapper = renderBarchart()
+  it('should switch x and y axises', () => {
+    renderBarchart()
+  })
 
-    screen.getByText('Avg. Overall RM Satisfaction')
-    screen.getByText('Client Calls')
-    screen.getByText('Prospect Calls')
-    screen.getByText('Strategies Updated')
+  it('should have a legend', () => {
+    renderBarchart()
+    screen.getByText('RM')
+    screen.getByText('This Time Last Year')
+  })
+
+  it('should display last years data as grey, adn this years as blue', () => {
+    // const { container } = renderBarchart()
+    // const lastyear = container.getElementsByClassName('highcharts-point')
+    // expect(lastyear).toHaveAttribute('fill')
+  })
+
+  it('should new clients data as red if under 4', () => {
+    renderBarchart()
   })
 })

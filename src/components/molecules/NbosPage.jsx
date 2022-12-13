@@ -7,15 +7,8 @@ const StyledCard = styled('div')(props => ({
 }))
 
 export const NbosPage = ({ bgColor, title, count, elevation }) => {
-  //   let cardAmount
-  //   if (elevation === 1) {
-  //     cardAmount = '100%'
-  //   } else if (elevation === 2) {
-  //     cardAmount = '50%'
-  //   }
   return (
-    <StyledCard
-      bgcolor={bgColor}
+    <div
       className="tw-flex tw-w-[100%] tw-h-[100%]"
       style={{ borderLeft: '.25px solid #eee' }}
     >
@@ -26,7 +19,7 @@ export const NbosPage = ({ bgColor, title, count, elevation }) => {
         <NbosText text={count} size="2xl" color="black" bold />
         <NbosText text={title} size="sm" uppercase color="grey" />
       </div>
-    </StyledCard>
+    </div>
   )
 }
 
