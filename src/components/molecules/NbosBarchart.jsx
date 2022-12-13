@@ -47,11 +47,11 @@ export const NbosBarchart = ({
       align: 'left',
     },
     title: {
-      text: 'NA',
+      text: '',
       align: 'left',
     },
     xAxis: {
-      categories: [],
+      categories: categories,
       tickLength: 500,
       endOnTick: false,
     },
@@ -83,8 +83,8 @@ export const NbosBarchart = ({
     },
     series: [
       {
-        name: 'NA',
-        data: [],
+        name: datasetOneLabel,
+        data: datasetOne,
         lineWidth: 5,
         minPointLength: 100,
         color: '#1B6AF8',
@@ -100,8 +100,8 @@ export const NbosBarchart = ({
         ],
       },
       {
-        name: 'NA',
-        data: [],
+        name: datasetTwoLabel,
+        data: datasetTwo,
         lineWidth: 5,
         minPointLength: 100,
         color: 'lightgrey',

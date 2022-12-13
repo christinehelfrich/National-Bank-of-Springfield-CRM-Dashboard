@@ -17,10 +17,6 @@ export const NbosTable = ({
     isShortened ? data.slice(0, 5) : data,
   )
 
-  useEffect(() => {
-    setAllRowData(isShortened ? data.slice(0, 5) : data)
-  }, [data])
-
   const formattedRows = []
 
   const gridRef = useRef()
@@ -82,96 +78,6 @@ export const NbosTable = ({
     // pagination: isShortened,
     // suppressPaginationPanel: true,
   }
-  // const [gridOptions, setGridOptions] = useState({
-  //   suppressMenuHide: true,
-  //   defaultColDef: {
-  //     width: columnWidth,
-  //     filter: 'number',
-  //     sortable: true,
-  //     // resizable: rdata.resizable,
-  //     cellStyle: () => ({
-  //       display: 'flex',
-  //       alignItems: 'center',
-  //       justifyContent: 'center',
-  //       backgroundColor: 'white',
-  //     }),
-  //     flex: 1,
-  //   },
-  //   animateRows: true,
-  //   enableRangeSelection: false,
-  //   headerHeight: headerHeight,
-  //   rowHeight: rowHeight,
-  //   sideBar: {
-  //     toolPanels: [
-  //       {
-  //         id: 'columns',
-  //         labelDefault: 'Columns',
-  //         labelKey: 'columns',
-  //         iconKey: 'columns',
-  //         toolPanel: 'agColumnsToolPanel',
-  //       },
-  //       {
-  //         id: 'filters',
-  //         labelDefault: 'Filters',
-  //         labelKey: 'filters',
-  //         iconKey: 'filter',
-  //         toolPanel: 'agFiltersToolPanel',
-  //       },
-  //     ],
-  //     defaultToolPanel: 'filters',
-  //   },
-  //   columnDefs,
-  //   rowData,
-  //   enableFillHandle: true,
-  //   // paginationPageSize: 5,
-  //   // pagination: isShortened,
-  //   // suppressPaginationPanel: true,
-  // })
-
-  // const updateGridOptions = () => {
-  //   setGridOptions({
-  //     suppressMenuHide: true,
-  //     defaultColDef: {
-  //       width: columnWidth,
-  //       filter: 'number',
-  //       sortable: true,
-  //       // resizable: rdata.resizable,
-  //       cellStyle: () => ({
-  //         display: 'flex',
-  //         alignItems: 'center',
-  //         justifyContent: 'center',
-  //         backgroundColor: 'white',
-  //       }),
-  //       flex: 1,
-  //     },
-  //     animateRows: true,
-  //     enableRangeSelection: false,
-  //     headerHeight: headerHeight,
-  //     rowHeight: rowHeight,
-  //     sideBar: {
-  //       toolPanels: [
-  //         {
-  //           id: 'columns',
-  //           labelDefault: 'Columns',
-  //           labelKey: 'columns',
-  //           iconKey: 'columns',
-  //           toolPanel: 'agColumnsToolPanel',
-  //         },
-  //         {
-  //           id: 'filters',
-  //           labelDefault: 'Filters',
-  //           labelKey: 'filters',
-  //           iconKey: 'filter',
-  //           toolPanel: 'agFiltersToolPanel',
-  //         },
-  //       ],
-  //       defaultToolPanel: 'filters',
-  //     },
-  //     columnDefs,
-  //     rowData,
-  //     enableFillHandle: true,
-  //   })
-  // }
 
   useEffect(() => {
     if (isShortened === true) {

@@ -12,10 +12,10 @@ export const retrieveOpportunitiesDetailsData = createAsyncThunk(
 )
 
 const initialState = {
-  // define each variable inside object individually
   isError: false,
   isLoading: false,
   opportunitiesDetailsData: [],
+  hasBeenFetched: false,
 }
 
 export const opportunitiesDetailsSlice = createSlice({
@@ -40,10 +40,8 @@ export const opportunitiesDetailsSlice = createSlice({
 
       .addCase(retrieveOpportunitiesDetailsData.fulfilled, (state, action) => {
         state.opportunitiesDetailsData = action.payload
-
+        state.hasBeenFetched = true
         state.isLoading = false
-
-        // console.log(state.profileData)
       })
 
       .addCase(retrieveOpportunitiesDetailsData.rejected, state => {

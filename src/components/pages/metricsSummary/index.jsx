@@ -5,25 +5,18 @@ import { useAppSelector, useDispatchHook } from '@/hooks/useReduxHooks'
 import { NbosText } from 'components/atoms/NbosText'
 import { NbosSelector } from 'components/molecules/NbosSelector'
 import { NbosBarchart } from 'components/molecules/NbosBarchart'
-import { outcomeMetricsTable } from 'stories/data/outcomeMetricsTable'
+import ClipLoader from 'react-spinners/ClipLoader'
 
 import { users } from 'stories/data/testData-users'
 import { retrieveOutcomeMetricsData } from '@/store/outcomeMetricsSlice'
 import { retrieveBehaviorMetricsData } from 'store/behaviorMetricsSlice'
 
 import Grid from '@mui/material/Grid'
-import React, { useEffect, useState, useRef } from 'react'
+import React, { useEffect, useState } from 'react'
 
 export function MetricsSummary() {
-  const dispatch = useDispatchHook()
-  const outcomeMetricsData = useAppSelector(
-    state => state.outcomeMetricsData.outcomeMetricsData,
-  )
-  const behaviorMetricsData = useAppSelector(
-    state => state.behaviorMetricsData.behaviorMetricsData,
-  )
+  const clientId = 1
   const [dataDisplayed, setDataDisplayed] = useState('Outcome Metrics')
-  const [data, setData] = useState(outcomeMetricsData)
   const [categories, setCategories] = useState([
     'Loan Production',
     'Deposit Growth',
@@ -31,7 +24,17 @@ export function MetricsSummary() {
     'New Clients',
   ])
 
-  const clientId = 1
+  const dispatch = useDispatchHook()
+  const outcomeMetricsData = useAppSelector(
+    state => state.outcomeMetricsData.outcomeMetricsData,
+  )
+  const behaviorMetricsData = useAppSelector(
+    state => state.behaviorMetricsData.behaviorMetricsData,
+  )
+  const outcomeIsLoading = useAppSelector(
+    state => state.outcomeMetricsData.isLoading,
+  )
+  const [data, setData] = useState()
 
   useEffect(() => {
     async function fetchdata() {
@@ -63,7 +66,7 @@ export function MetricsSummary() {
         'Strategies Updated',
       ])
     }
-  }, [dataDisplayed, outcomeMetricsData])
+  }, [dataDisplayed, outcomeIsLoading])
 
   return (
     <div className="App boundry">
@@ -98,14 +101,24 @@ export function MetricsSummary() {
               />
             </Grid>
             <Grid item xs={1} sm={2} md={2} lg={2} xl={2}>
-              <NbosBarchart
-                data={data}
-                categories={categories}
-                clientId={1}
-                bgColor="#1B6AF8"
-                datasetOneLabel="RM"
-                datasetTwoLabel="This Time Last Year"
-              />
+              {outcomeIsLoading ? (
+                <ClipLoader
+                  color="blue"
+                  loading={outcomeIsLoading}
+                  size={150}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              ) : (
+                <NbosBarchart
+                  data={data}
+                  categories={categories}
+                  clientId={1}
+                  bgColor="#1B6AF8"
+                  datasetOneLabel="RM"
+                  datasetTwoLabel="This Time Last Year"
+                />
+              )}
             </Grid>
           </Grid>
         </section>

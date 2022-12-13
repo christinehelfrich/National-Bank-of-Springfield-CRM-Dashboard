@@ -34,14 +34,14 @@ export const NbosColumnChart = ({
       type: 'column',
     },
     title: {
-      text: 'NA',
+      text: title,
     },
     xAxis: {
-      categories: [],
+      categories: categories,
     },
     yAxis: {
       title: {
-        text: 'NA',
+        text: yTitle,
       },
       labels: {
         enabled: true,
@@ -67,12 +67,12 @@ export const NbosColumnChart = ({
     },
     series: [
       {
-        name: 'NA',
+        name: datasetOneLabel,
         data: datasetOne,
-        color: 'grey',
+        color: bgColor,
       },
       {
-        name: 'NA',
+        name: datasetTwoLabel,
         data: datasetTwo,
         color: '#adcaf7',
       },
@@ -81,65 +81,6 @@ export const NbosColumnChart = ({
       color: '#FFFFFF',
     },
   })
-
-  const updateSeries = () => {
-    setOptions({
-      chart: {
-        type: 'column',
-      },
-      title: {
-        text: title,
-      },
-      xAxis: {
-        categories: categories,
-      },
-      yAxis: {
-        title: {
-          text: yTitle,
-        },
-        labels: {
-          enabled: true,
-        },
-      },
-      tooltip: {
-        formatter: function () {
-          return `$ ${convertNum(this.y)}`
-        },
-      },
-      plotOptions: {
-        column: {
-          dataLabels: {
-            enabled: false,
-            formatter: function () {
-              return convertNum(this.y)
-            },
-          },
-
-          groupPadding: 0.2,
-          pointPadding: 0,
-        },
-      },
-      series: [
-        {
-          name: datasetOneLabel,
-          data: datasetOne,
-          color: bgColor,
-        },
-        {
-          name: datasetTwoLabel,
-          data: datasetTwo,
-          color: '#adcaf7',
-        },
-      ],
-      dataLabels: {
-        color: '#FFFFFF',
-      },
-    })
-  }
-
-  useEffect(() => {
-    updateSeries()
-  }, [data])
 
   options.series[0].color = bgColor
 

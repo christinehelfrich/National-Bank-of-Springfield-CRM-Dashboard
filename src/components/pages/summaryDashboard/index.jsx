@@ -7,6 +7,7 @@ import { retrieveClientData } from '@/store/clientSlice'
 import { retrieveSummary1Data } from 'store/summary1Slice'
 import { retrieveSummary2Data } from 'store/summary2Slice'
 
+import ClipLoader from 'react-spinners/ClipLoader'
 import { NbosSummary1 } from 'components/organisms/NbosSummary1'
 import { NbosClientOverview } from 'components/organisms/NbosClientOverview'
 import { NbosProfile } from 'components/organisms/NbosProfile'
@@ -19,10 +20,20 @@ import { convertDateInParams } from 'utilities/convertNum'
 export function SummaryDashboard() {
   const dispatch = useDispatchHook()
 
-  const profileData = useAppSelector(state => state.profileData)
-  const clientData = useAppSelector(state => state.clientData)
-  const summary1Data = useAppSelector(state => state.summary1Data)
-  const summary2Data = useAppSelector(state => state.summary2Data)
+  const profileData = useAppSelector(state => state.profileData.profileData)
+  const profileIsLoading = useAppSelector(state => state.profileData.isLoading)
+  const clientData = useAppSelector(state => state.clientData.clientData)
+  const clientIsLoading = useAppSelector(state => state.clientData.isLoading)
+  const summary1Data = useAppSelector(state => state.summary1Data.summary1Data)
+  const summary1IsLoading = useAppSelector(
+    state => state.summary1Data.isLoading,
+  )
+  const summary2Data = useAppSelector(state => state.summary2Data.summary2Data)
+  const summary2IsLoading = useAppSelector(
+    state => state.summary2Data.isLoading,
+  )
+
+  const state = useAppSelector(state => state)
 
   useEffect(() => {
     async function fetchdata() {
@@ -47,7 +58,17 @@ export function SummaryDashboard() {
             alignItems="stretch"
           >
             <Grid item xs={1} sm={1} md={1} lg={1} xl={1}>
-              <NbosProfile userData={profileData.profileData} />
+              {profileIsLoading ? (
+                <ClipLoader
+                  color="blue"
+                  loading={profileIsLoading}
+                  size={150}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              ) : (
+                <NbosProfile userData={profileData} />
+              )}
             </Grid>
             <Grid
               item
@@ -58,11 +79,39 @@ export function SummaryDashboard() {
               xl={3}
               sx={{ height: '100%' }}
             >
-              <NbosClientOverview pageData={clientData.clientData} />
-
-              <NbosSummary1 pageData={summary1Data.summary1Data} />
-
-              <NbosSummary2 pageData={summary2Data.summary2Data} />
+              {clientIsLoading ? (
+                <ClipLoader
+                  color="blue"
+                  loading={clientIsLoading}
+                  size={150}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              ) : (
+                <NbosClientOverview pageData={clientData} />
+              )}
+              {summary1IsLoading ? (
+                <ClipLoader
+                  color="blue"
+                  loading={summary1IsLoading}
+                  size={150}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              ) : (
+                <NbosSummary1 pageData={summary1Data} />
+              )}
+              {summary2IsLoading ? (
+                <ClipLoader
+                  color="blue"
+                  loading={summary2IsLoading}
+                  size={150}
+                  aria-label="Loading Spinner"
+                  data-testid="loader"
+                />
+              ) : (
+                <NbosSummary2 pageData={summary2Data} />
+              )}
             </Grid>
           </Grid>
         </section>
