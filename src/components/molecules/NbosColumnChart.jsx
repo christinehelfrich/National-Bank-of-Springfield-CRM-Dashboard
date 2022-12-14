@@ -29,7 +29,7 @@ export const NbosColumnChart = ({
     }
   }
 
-  const [options, setOptions] = useState({
+  const options = {
     chart: {
       type: 'column',
     },
@@ -80,9 +80,7 @@ export const NbosColumnChart = ({
     dataLabels: {
       color: '#FFFFFF',
     },
-  })
-
-  options.series[0].color = bgColor
+  }
 
   return (
     <div>
