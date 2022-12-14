@@ -21,7 +21,6 @@ const renderTable = props => {
 describe('NbosTable', () => {
   it('should render data from the database', () => {
     renderTable()
-
     opportunitiesDetailsTable.map(row => {
       expect(screen.getAllByText(row.product_type)).toBeVisible
     })
@@ -29,15 +28,10 @@ describe('NbosTable', () => {
 
   it('should sort by revenue on column label click', () => {
     const { container } = renderTable()
-
     const rev_button = screen.getByText('Revenue')
-
     fireEvent.click(rev_button)
-
     const firstRow = getAllByRowId(container, 2)
-
     const revenueRow = within(firstRow[1]).getAllByText('$ 49.30 K')
-
     expect(revenueRow).toBeVisible
   })
 
@@ -49,9 +43,7 @@ describe('NbosTable', () => {
         isShortened={true}
       />,
     )
-
     const testColumn = getAllByColumnId(container, 2)
-
     expect(testColumn.length).toBe(6)
   })
 })
