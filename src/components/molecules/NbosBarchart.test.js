@@ -36,15 +36,19 @@ describe('NbosBarchart', () => {
   })
 
   it('should display data in the right format', () => {
-    renderBarchart()
+    const { container } = renderBarchart()
 
-    // const loan_prod_y1 = screen.getByText(
-    //   outcomeMetricsTable[1].loan_prod_y1,
-    // ).textContent
+    const loan_prod_y1 = container.getElementsByClassName(
+      'highcharts-data-label',
+    )
+
+    expect(loan_prod_y1[0].textContent).toMatch(/[\d+] K/)
   })
 
   it('should switch x and y axises', () => {
-    renderBarchart()
+    const { container } = renderBarchart()
+    const yaxis = container.getElementsByClassName('highcharts-xaxis')
+    expect(yaxis[0]).toBeVisible()
   })
 
   it('should have a legend', () => {
@@ -54,12 +58,15 @@ describe('NbosBarchart', () => {
   })
 
   it('should display last years data as grey, adn this years as blue', () => {
-    // const { container } = renderBarchart()
-    // const lastyear = container.getElementsByClassName('highcharts-point')
-    // expect(lastyear).toHaveAttribute('fill')
+    const { container } = renderBarchart()
+    const lastyear = container.getElementsByClassName('highcharts-point')
+    expect(lastyear[0].getAttribute('fill')).toBe('#1B6AF8')
+    expect(lastyear[4].getAttribute('fill')).toBe('lightgrey')
   })
 
   it('should new clients data as red if under 4', () => {
-    renderBarchart()
+    const { container } = renderBarchart()
+    const lastyear = container.getElementsByClassName('highcharts-point')
+    expect(lastyear[3].getAttribute('fill')).toBe('red')
   })
 })

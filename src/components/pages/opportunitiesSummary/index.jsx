@@ -51,7 +51,7 @@ export function OpportunitiesSummary() {
               ]}
               yTitle="Revenue"
               bgColor="#1B6AF8"
-              title="Current VS Same Time Last Year"
+              title="Current vs. Same Time Last year"
               datasetOneLabel="2021"
               datasetTwoLabel="2020"
             />

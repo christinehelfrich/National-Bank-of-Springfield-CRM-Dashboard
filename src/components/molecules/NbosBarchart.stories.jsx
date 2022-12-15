@@ -21,7 +21,7 @@ BehaviorMetricsTable.args = {
     'Prospect Calls',
     'Strategies Updated',
   ],
-  clientId: 1,
+  clientId: 4,
   bgColor: '#1B6AF8',
   datasetOneLabel: 'RM',
   datasetTwoLabel: 'This Time Last Year',
@@ -31,7 +31,7 @@ export const OutcomeMetricsTable = Template.bind({})
 OutcomeMetricsTable.args = {
   data: outcomeMetricsTable,
   categories: ['Loan Production', 'Deposit Growth', 'TM Growth', 'New Clients'],
-  clientId: 1,
+  clientId: 0,
   bgColor: '#1B6AF8',
   datasetOneLabel: 'RM',
   datasetTwoLabel: 'This Time Last Year',
