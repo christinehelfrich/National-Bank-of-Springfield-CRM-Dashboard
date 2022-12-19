@@ -1,4 +1,4 @@
-import Icon from '@mui/material/icon'
+import { Icon } from '@mui/material'
 import PropTypes from 'prop-types'
 
 export const NbosIcon = ({ icon, color, fontSize }) => {

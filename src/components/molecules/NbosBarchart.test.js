@@ -38,11 +38,9 @@ describe('NbosBarchart', () => {
   it('should display data in the right format', () => {
     const { container } = renderBarchart()
 
-    const loan_prod_y1 = container.getElementsByClassName(
-      'highcharts-data-label',
-    )
+    const loadProdY1 = container.getElementsByClassName('highcharts-data-label')
 
-    expect(loan_prod_y1[0].textContent).toMatch(/[\d+] K/)
+    expect(loadProdY1[0].textContent).toMatch(/[\d+] K/)
   })
 
   it('should switch x and y axises', () => {

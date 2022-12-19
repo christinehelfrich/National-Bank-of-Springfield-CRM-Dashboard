@@ -55,7 +55,7 @@
     "no-console": "off",
     "no-plusplus": "off",
     "no-shadow": "off",
-    "no-unused-vars": "warn",
+    "no-unused-vars": "off",
     "no-use-before-define": "warn",
     "prefer-template": "error",
     "prettier/prettier": [
